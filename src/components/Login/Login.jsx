@@ -6,18 +6,56 @@
  */
 
 import React, {Component} from 'react';
-
+import {bindActionCreators} from 'redux';
+import {connect} from 'react-redux';
 //==========================================
-import Header from '../Header/Header.jsx';
-import HomePage from '../Footer/Footer.jsx';
+
+import {actionLogin} from '../../actions/commonAction';
 
 //==========================================
 import loginStyle from './scss/login.scss'
 
 
-export default class Login extends Component {
+class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.actions = bindActionCreators(Object.assign({}, {actionLogin}), props.dispatch)
+  }
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
+
+  onSubmit() {
+    const username = this.refs.username.value,
+      password = this.refs.password.value;
+
+    const msg = {
+      usernameMessage: this.refs.usernameMessage,
+      passwordMessage: this.refs.passwordMessage
+    };
+
+    if (username.trim() === '') {
+      msg.usernameMessage.innerHTML = '用户名不能为空';
+    }
+    if (password.trim() === '') {
+      msg.passwordMessage.innerHTML = '密码不能为空';
+      return false;
+    }
+
+    const data = {
+      username: username,
+      password: password
+    };
+    this.actions.actionLogin(data,msg,this.context.router)
+  }
+
+  onChange() {
+
+  }
+
+
   render() {
-    console.log('login', this.props);
     return (
       <div className={loginStyle.loginContainer}>
         <form>
@@ -25,25 +63,35 @@ export default class Login extends Component {
             <i>
               <img src="/images/login/account.png" alt="username"/>
             </i>
-            <input type="text" ref="username"/>
+            <input type="text" ref="username"
+                   onChange={() => {
+                     this.refs.usernameMessage.innerHTML = '';
+                   }}
+            />
           </div>
+          <p ref="usernameMessage"></p>
           <div>
             <i>
               <img src="/images/login/stop.png" alt="password"/>
             </i>
-            <input type="password" ref="password"/>
+            <input type="password" ref="password"
+                   onChange={() => {
+                     this.refs.passwordMessage.innerHTML = '';
+                   }}
+            />
           </div>
+          <p ref="passwordMessage"></p>
           <div>
             <p>
               没有账户？赶紧<span>注册</span>
             </p>
-            <button type="button">登录</button>
-          </div>
-          <div>
-
+            <button type="button" onClick={this.onSubmit.bind(this)}>登录</button>
           </div>
         </form>
       </div>
     )
   }
 }
+
+
+export default connect()(Login);

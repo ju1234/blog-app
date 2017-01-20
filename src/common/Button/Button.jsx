@@ -12,7 +12,6 @@ import style from './sass/button.scss'
 
 export default class Button extends Component{
   render(){
-    console.log(this.props)
     return (
       <button className={style.button} onClick={this.props.onclick}>{this.props.text}</button>
     )

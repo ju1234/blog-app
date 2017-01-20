@@ -18,7 +18,6 @@ import {actionSetFooterActive} from '../../actions/commonAction.js'
 
 import {pathProcessor} from '../../utils/pathInfo'
 
-import asd from '../../api/demo'
 
 
 class Header extends Component {
@@ -37,9 +36,9 @@ class Header extends Component {
    /* 默认跳转首页*/
     if (pathProcessor(location.href) === paths.BASE) {
       this.context.router.push('/index');
-      /*// this.actions.actionSetFooterActive([1,0,0,0])*/
+      this.actions.actionSetFooterActive([1,0,0,0])
     }
-    /*// this.actions.actionInit();*/
+    this.actions.actionInit();
   }
 
   static contextTypes = {
@@ -51,8 +50,6 @@ class Header extends Component {
     let {login, header} = this.props;
     login = login.toJS();
     header = header.toJS();
-
-    console.log(this.context.router);
     return (
       <div className={headerStyle.headerContainer}>
         <div onClick={() => {
@@ -64,9 +61,7 @@ class Header extends Component {
               null
           }
         </div>
-        <h1 onClick={() => {
-          console.log('asdasds')
-        }}>{login.username}</h1>
+        <h1>{login.username}</h1>
         <div>
           {
             header.btn ?

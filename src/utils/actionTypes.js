@@ -8,6 +8,12 @@
 // 登陆 注销 注册 弹出层显示
 export const SHOW_ALERTMODEL = 'SHOW_ALERTMODEL';
 
+// 设置用户登录信息
+export const SET_USER_INFO = 'SET_USER_INFO';
+
+//注销 清除用户登录信息
+export const CLEAR_USER_INFO = 'CLEAR_USER_INFO';
+
 // 登陆 注销 注册 弹出层隐藏
 export const HIDE_ALERTMODEL = 'HIDE_ALERTMODEL';
 
