@@ -1,0 +1,30 @@
+@import "../../style/base";
+
+.footerContainer{
+  @extend .display_flex;
+
+  width: 100%;
+  height: 60px;
+  background: rgba(235,235,235,0.99);
+
+  >div{
+    width: 25%;
+
+    @extend .display_flex;
+    @extend .flexDirection_column;
+    @extend .justifyContent_center;
+    @extend .alignItems_center;
+
+    color: #333;
+    font-size: 0.6em;
+
+    i{
+      width: 20px;
+      margin-bottom: 5px;
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

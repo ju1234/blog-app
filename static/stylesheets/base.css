@@ -1,0 +1,27 @@
+﻿/*-----------------------------全局样式-------------------------------------*/
+@charset "utf-8";
+body, div, address, blockquote, iframe, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, h4, h5, h6, p, pre, table, caption, th, td, form, legend, fieldset, input, button, select, textarea {margin:0; padding:0; border:0;}
+body{ font-weight: normal;font-style: normal;font-size: 100%;font-family:Segoe UI,'Microsoft Yahei', 'Tahoma'; background:#fff; color:#222; }
+ol, ul ,li{list-style: none;}
+a img,img {border: 0;vertical-align: middle;}
+a {text-decoration: none; color:#333}
+a:hover {color:#F60}
+a:focus {outline-style: none;}
+a,area {blr: expression(this.onFocus = this.blur () );}/*按下鼠标图片周边不会出现虚线，这个适合所有的浏览器*/
+ul li {list-style: none;}
+table {border-collapse: collapse;}
+th {white-space:nowrap; font-weight:bold}
+td {word-break:break-all;}
+input,select,textarea,button{vertical-align: middle;font-family:"微软雅黑"; background:none;}
+input,select{ height:24px;}
+label{cursor: pointer;}
+.clear:after{content:""; display:block; clear:both; visibility:hidden; height:0;}
+.clear{zoom:1;}
+.form input{float: left;}
+.shadow{-webkit-box-shadow:#ccc 0px 0px 8px;-moz-box-shadow:#ccc 0px 0px 8px;box-shadow:#ccc 0px 0px 8px;}
+/*-- css3 --*/
+.t3out {transition: all 0.3s ease-out 0s;}
+
+input,textarea,button{outline: 0}
+button{cursor: pointer}
+*{box-sizing: border-box}
