@@ -1,0 +1,81 @@
+@import "../../style/base";
+
+.loginContainer{
+  position: absolute;
+  top: 60px;
+  left: 0;
+  bottom: 60px;
+  right: 0;
+
+  form{
+    @extend .display_flex;
+    @extend .flexDirection_column;
+    @extend .justifyContent_center;
+    @extend .alignItems_center;
+
+    width: 100%;
+    height: 100%;
+
+    >div{
+      @extend .display_flex;
+      width: 60%;
+      height: 35px;
+      border: 1px solid #333;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      &:last-child{
+        border: none;
+      }
+
+      &:nth-child(3){
+        height: 32px;
+        border: none;
+        justify-content: space-between;
+      }
+
+      i{
+        @extend .display_flex;
+        @extend .justifyContent_center;
+        @extend .alignItems_center;
+
+        width: 15%;
+        //display: inline-flex;
+        background: #333;
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+
+        img{
+          width: 15px;
+        }
+      }
+
+      input{
+        height: 100%;
+        flex: 1;
+        padding-left: 10px;
+      }
+
+      button{
+        //width: 20%;
+        height: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-size: 1em;
+        background: #333;
+        border-radius: 6px;
+        color: #ccc;
+      }
+
+      >p{
+        align-self: flex-end;
+        font-size: 0.9em;
+
+        >span{
+          color: #1296db;
+          text-decoration: underline;
+        }
+      }
+
+    }
+  }
+}

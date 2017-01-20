@@ -38,6 +38,11 @@ export function actionGoToIndex(router) {
     //显示头部按钮
     dispatch({
       type: actionType.HEADER_BTN_SHOW
+    });
+
+    // 回退按钮隐藏
+    dispatch({
+      type: actionType.HIDE_HEADER_BACKBTN
     })
   }
 }

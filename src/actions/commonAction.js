@@ -11,8 +11,8 @@ import * as paths from '../utils/paths.js'
 // 登录
 export function actionLogin(router) {
 
-  // router.push(paths.LOGIN);
-  location.href = paths.LOGIN;
+  router.push(paths.LOGIN);
+  // location.href = paths.LOGIN;
   return (dispatch) => {
     // 隐藏头部按钮
     dispatch({
@@ -22,6 +22,10 @@ export function actionLogin(router) {
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
       payload: [0,0,0,0]
+    });
+    // 头部回退按钮显示
+    dispatch({
+      type: actionType.SHOW_HEADER_BACKBTN
     })
   }
 }

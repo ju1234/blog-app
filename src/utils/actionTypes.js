@@ -5,12 +5,17 @@
  * 时间： 2017/1/9.
  */
 
-// 头部
+// 登陆 注销 注册 弹出层显示
 export const SHOW_ALERTMODEL = 'SHOW_ALERTMODEL';
 
+// 登陆 注销 注册 弹出层隐藏
 export const HIDE_ALERTMODEL = 'HIDE_ALERTMODEL';
 
+// 头部回退按钮显示
+export const SHOW_HEADER_BACKBTN = 'SHOW_HEADER_BACKBTN';
 
+// 头部回退按钮显示
+export const HIDE_HEADER_BACKBTN = 'HIDE_HEADER_BACKBTN';
 
 //头部右上角按钮隐藏
 export const HEADER_BTN_HIDDEN = 'HEADER_BTN_HIDDEN';

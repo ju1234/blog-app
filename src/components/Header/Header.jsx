@@ -9,12 +9,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-// import Icon from '../../common/icon/Icon.jsx'
 
 import headerStyle from './sass/header.scss'
 import * as paths from '../../utils/paths.js'
 
-import {actionShowAlertModel,actionInit} from '../../actions/headerAction.js'
+import {actionShowAlertModel, actionInit} from '../../actions/headerAction.js'
 import {actionSetFooterActive} from '../../actions/commonAction.js'
 
 import {pathProcessor} from '../../utils/pathInfo'
@@ -25,17 +24,22 @@ import asd from '../../api/demo'
 class Header extends Component {
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({}, {actionShowAlertModel,actionInit,actionSetFooterActive}), props.dispatch);
+    this.actions = bindActionCreators(
+      Object.assign({}, {
+        actionShowAlertModel,
+        actionInit,
+        actionSetFooterActive
+      }), props.dispatch);
     this.alertToggle = false;
   }
 
   componentDidMount() {
-    // 默认跳转首页
+   /* 默认跳转首页*/
     if (pathProcessor(location.href) === paths.BASE) {
       this.context.router.push('/index');
-      this.actions.actionSetFooterActive([1,0,0,0])
+      /*// this.actions.actionSetFooterActive([1,0,0,0])*/
     }
-    this.actions.actionInit();
+    /*// this.actions.actionInit();*/
   }
 
   static contextTypes = {
@@ -43,28 +47,30 @@ class Header extends Component {
   };
 
 
-
-
   render() {
     let {login, header} = this.props;
     login = login.toJS();
     header = header.toJS();
 
-    console.log(this.context.router)
+    console.log(this.context.router);
     return (
       <div className={headerStyle.headerContainer}>
-        <div onClick={this.context.router.goBack}>
+        <div onClick={() => {
+          console.log(1)
+        }}>
           {
             header.back ?
-              <img src="/images/back.png" alt="back"/> :
+              <img src="/images/icon/back.png" alt="back"/> :
               null
           }
         </div>
-        <h1 onClick={asd}>{login.username}</h1>
+        <h1 onClick={() => {
+          console.log('asdasds')
+        }}>{login.username}</h1>
         <div>
           {
-            header.btn?
-              <button type="button" onClick={this.actions.actionShowAlertModel}>+</button>:
+            header.btn ?
+              <button type="button" onClick={this.actions.actionShowAlertModel}>+</button> :
               null
           }
         </div>
@@ -80,4 +86,4 @@ function mapStateToProps(store) {
   }
 }
 
-export default connect(mapStateToProps)(Header)
+export default connect(mapStateToProps)(Header);

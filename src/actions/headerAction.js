@@ -21,7 +21,7 @@ export function actionShowAlertModel() {
 }
 
 
-
+// 刷新初始化
 export function actionInit() {
   const path = pathProcessor(location.href);
 

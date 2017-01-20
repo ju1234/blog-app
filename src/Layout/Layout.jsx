@@ -13,10 +13,14 @@ import Header from '../components/Header/Header.jsx'
 import Footer from '../components/Footer/Footer.jsx'
 import AlertModel from '../common/AlertModel/AlertModel.jsx'
 
+import Login from '../components/Login/Login'
 
 
+// const Header = require('../components/Header/Header')
 
 import layoutStyle from './scss/layout.scss'
+
+
 
 class Layout extends Component {
   constructor(props) {
@@ -34,12 +38,11 @@ class Layout extends Component {
       <div>
         <div className={layoutStyle.header}>
           <Header/>
+          {/*<Login/>*/}
         </div>
-        <div className={layoutStyle.placeholder}></div>
-        <div>
+        <div className={layoutStyle.placeholder}>
           {this.props.children}
         </div>
-        <div className={layoutStyle.placeholder}></div>
         <div className={layoutStyle.footer}>
           <Footer/>
         </div>

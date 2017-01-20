@@ -10,7 +10,7 @@ import Immutable from 'immutable'
 import * as actionType from '../utils/actionTypes'
 
 const init = {
-  back: true,
+  back: false,
   btn: true,
 };
 
@@ -18,11 +18,18 @@ const init = {
 export default function headerReducer(state = Immutable.fromJS(init), action) {
   switch (action.type) {
 
+    // 头部弹出层按钮隐藏 与显示
     case actionType.HEADER_BTN_HIDDEN:
       return state.update('btn',() => false);
-
     case actionType.HEADER_BTN_SHOW:
       return state.update('btn',() => true);
+
+      // 头部回退按钮显示和隐藏
+    case actionType.HIDE_HEADER_BACKBTN:
+            return state.update('back', () => false);
+    case actionType.SHOW_HEADER_BACKBTN:
+      return state.update('back', () => true);
+
 
     default:
       return state;
