@@ -82,11 +82,13 @@ export function actionLogout(router) {
     dispatch({
       type: actionType.HEADER_BTN_SHOW
     });
-    // 清楚用户登录信息
+    // 清除用户登录信息
     dispatch({
       type: actionType.CLEAR_USER_INFO,
       payload: {
-        username: 'BLOG',
+        userInfo: {
+          name: 'BLOG'
+        },
         logined: false
       }
     })

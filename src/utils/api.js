@@ -10,3 +10,9 @@
 
 // 密码核实
 export const VERIFY_PASSWORD = '/api/verifyPassword';
+
+//注册
+export const REG = '/api/reg';
+
+// 验证手机是否注册
+export const HAS_THIS_PHONE = '/api/hasThisPhone';

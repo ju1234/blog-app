@@ -64,6 +64,7 @@ class Login extends Component {
               <img src="/images/login/account.png" alt="username"/>
             </i>
             <input type="text" ref="username"
+                   placeholder="手机号或用户名"
                    onChange={() => {
                      this.refs.usernameMessage.innerHTML = '';
                    }}
@@ -72,9 +73,10 @@ class Login extends Component {
           <p ref="usernameMessage"></p>
           <div>
             <i>
-              <img src="/images/login/stop.png" alt="password"/>
+              <img src="/images/reg/password.png" alt="password"/>
             </i>
             <input type="password" ref="password"
+                   placeholder="请输入密码"
                    onChange={() => {
                      this.refs.passwordMessage.innerHTML = '';
                    }}

@@ -24,6 +24,7 @@ export default function loginReducer(state = Immutable.fromJS(init),action){
       localStorage.setItem('BLOG_USER_INFO',JSON.stringify(action.payload));
       return Immutable.fromJS(action.payload);
 
+      //注销   清楚用户信息
     case actionType.CLEAR_USER_INFO:
       localStorage.clear('BLOG_USER_INFO');
       return Immutable.fromJS(action.payload);

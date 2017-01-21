@@ -44,6 +44,10 @@ app.get('/login', (req, res, next) => {
   res.sendFile(path.join(__dirname, "src/index.html"));
 });
 
+app.get('/reg', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
 
 // routes(app);
 
