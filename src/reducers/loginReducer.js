@@ -11,7 +11,9 @@ import * as actionType from '../utils/actionTypes.js'
 const init = localStorage.getItem('BLOG_USER_INFO')?
   JSON.parse(localStorage.getItem('BLOG_USER_INFO')):
   {
-    username: 'BLOG',
+    userInfo: {
+      name: "BLOG"
+    },
     logined: false
   };
 

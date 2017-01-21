@@ -61,7 +61,7 @@ class Header extends Component {
               null
           }
         </div>
-        <h1>{login.username}</h1>
+        <h1>{login.userInfo.name}</h1>
         <div>
           {
             header.btn ?

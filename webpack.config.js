@@ -1,5 +1,8 @@
 /**
- * Created by qichao on 2016/12/19.
+ * 文件说明： webpack
+ * 详细描述：
+ * 创建者： JU
+ * 时间： 2016/12/19.
  */
 module.exports = {
   devtool: 'source-map',

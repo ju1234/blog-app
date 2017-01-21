@@ -36,7 +36,7 @@ export function actionLogin(data,msg,router) {
           dispatch({
             type: actionType.SET_USER_INFO,
             payload: {
-              username: data.username,
+              userInfo: res.info,
               logined: true
             }
           })

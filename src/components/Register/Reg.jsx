@@ -20,7 +20,9 @@ class Reg extends Component{
   }
 
   render(){
-    return <div>register</div>
+    return (
+      <div>asd</div>
+    )
   }
 }
 
