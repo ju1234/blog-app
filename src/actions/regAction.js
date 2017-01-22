@@ -5,30 +5,46 @@
  * 时间： 2017/1/21
  */
 
-
+import * as actionType from '../utils/actionTypes.js'
 import * as api from '../utils/api.js'
+import * as path from '../utils/paths.js'
 import {apiPost} from '../api/API.js'
 
 // 注册数据判断
-export function register(data,status) {
+export function register(data, status, router) {
   return (dispatch) => {
-    const isPass = status.every((item) => {
-      return item === 1;
-    });
-
-    if(isPass){
-      for (let key in data){
-        if(data[key] === ''){
-          delete data[key]
-        }
+    delete data.ntpassword;
+    for (let key in data) {
+      if (data[key] === '') {
+        delete data[key]
       }
-      if(data['email'].split('@')[0] === ''){
-        delete data['email']
-      }
-      apiPost(api.REG,data)
-        .then()
-    }else {
-      alert('请核对后再提交');
     }
+    if (data['email'].split('@')[0] === '') {
+      delete data['email']
+    }
+    apiPost(api.REG, data)
+      .then((msg) => {
+        if (msg.msg) {
+          // 设置登录信息
+          dispatch({
+            type: actionType.SET_USER_INFO,
+            payload: {
+              userInfo: data,
+              logined: true
+            }
+          });
+          // 跳转主页
+          router.push(path.INDEX);
+          //头部右侧按钮显示
+          dispatch({
+            type: actionType.HEADER_BTN_SHOW
+          });
+          // 设置footer activve
+          dispatch({
+            type: actionType.SET_FOOTER_ACTIVE,
+            payload: [1, 0, 0, 0]
+          })
+        }
+      })
   }
 }

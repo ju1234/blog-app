@@ -14,6 +14,7 @@ import {actionLogin} from '../../actions/commonAction';
 
 //==========================================
 import loginStyle from './scss/login.scss'
+import * as path from '../../utils/paths.js'
 
 
 class Login extends Component {
@@ -84,7 +85,9 @@ class Login extends Component {
           </div>
           <p ref="passwordMessage"></p>
           <div>
-            <p>
+            <p onClick={() => {
+              this.context.router.push(path.REG)
+            }}>
               没有账户？赶紧<span>注册</span>
             </p>
             <button type="button" onClick={this.onSubmit.bind(this)}>登录</button>

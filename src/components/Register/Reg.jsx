@@ -15,19 +15,22 @@ import {register} from '../../actions/regAction.js'
 import regStyle from './scss/reg.scss';
 import ageArr from '../../utils/ageArr.js';
 
-import {regFormValidator} from '../../utils/regFormValidator.js';
+import {regFormValidator, submitValidator} from '../../utils/regFormValidator.js';
 
 
 class Reg extends Component {
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({},{register}),props.dispatch)
+    this.actions = bindActionCreators(Object.assign({}, {register}), props.dispatch)
     this.status = [0, 0, 0, 0];
   }
 
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
   // 密码验证
   ntPassword() {
-    if(this.status[1] === 0){
+    if (this.status[1] === 0) {
       return false
     }
     if (this.refs.password.value.trim() === '') {
@@ -38,19 +41,40 @@ class Reg extends Component {
       this.refs.ntpasswordMsg.innerHTML = '验证通过';
       this.refs.ntpasswordMsg.style.color = '#1296db';
       this.status[2] = 1;
-    }else {
+    } else {
       this.refs.ntpasswordMsg.innerHTML = '密码不正确';
       this.status[2] = 0;
     }
   }
 
-  onSubmitHandle(data,status = this.status){
-    this.actions.register(data,status)
+  onSubmitHandle(data, status = this.status, router = this.context.router) {
+    submitValidator(data, status)
+      .then(() => {
+        this.actions.register(data, status, router)
+      }).catch((status) => {
+        status.map((item,index) => {
+          if(item === 0){
+            if(index === 0 ){
+              this.refs.nameMsg.innerHTML = '请输入合法用户名';
+              this.refs.nameMsg.style.color = '#f00';
+            }else if(index === 1){
+              this.refs.passwordMsg.innerHTML = '密码为6-20位字母与数字的组合';
+              this.refs.passwordMsg.style.color = '#f00';
+            }else if(index === 2){
+              this.refs.ntpasswordMsg.innerHTML = '两次密码不一致';
+              this.refs.ntpasswordMsg.style.color = '#f00';
+            }else {
+              this.refs.phoneMsg.innerHTML = '号码格式不正确';
+              this.refs.phoneMsg.style.color = '#f00';
+            }
+          }
+        })
+    });
   }
 
   //表单输入内容验证
   fromVal(value, type, msg, status = this.status) {
-    regFormValidator(value, type, msg,status);
+    regFormValidator(value, type, msg, status);
   }
 
   render() {
@@ -64,12 +88,12 @@ class Reg extends Component {
             <input type="text" ref="name"
                    placeholder="*请输入用户名"
                    onBlur={() => {
-                       this.fromVal(
-                         this.refs.name.value,
-                         'name',
-                         this.refs.nameMsg
-                       )
-                     }
+                     this.fromVal(
+                       this.refs.name.value,
+                       'name',
+                       this.refs.nameMsg
+                     )
+                   }
                    }
                    onChange={() => {
                      this.refs.nameMsg.innerHTML = ''
@@ -92,8 +116,8 @@ class Reg extends Component {
                    }
                    }
                    onChange={() => {
-                     this.refs.passwordMsg.innerHTML = ''
-                     this.refs.ntpasswordMsg.innerHTML = ''
+                     this.refs.passwordMsg.innerHTML = '';
+                     this.refs.ntpasswordMsg.innerHTML = '';
                    }}
             />
           </div>
@@ -186,6 +210,7 @@ class Reg extends Component {
                 {
                   name: this.refs.name.value.trim(),
                   password: this.refs.password.value.trim(),
+                  ntpassword: this.refs.ntpassword.value.trim(),
                   phone: this.refs.phone.value.trim(),
                   sex: this.refs.sex.value,
                   age: this.refs.age.value,
@@ -193,7 +218,8 @@ class Reg extends Component {
                   email: this.refs.email.value + this.refs._email.value
                 }
               )
-            }}>注册</button>
+            }}>注册
+            </button>
           </div>
         </form>
       </div>
