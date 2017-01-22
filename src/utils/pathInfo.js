@@ -7,6 +7,8 @@
 
 import * as paths from './paths'
 
+
+//----------刷新获取信息
 export function getPathInfo(href) {
   switch (pathProcessor(href)){
 
