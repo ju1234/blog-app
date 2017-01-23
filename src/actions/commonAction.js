@@ -95,7 +95,7 @@ export function actionLogout(router) {
   }
 }
 
-// 注册
+// 跳转注册页面
 export function actionGoToRegPage(router) {
   router.push(paths.REG);
   return (dispatch) => {

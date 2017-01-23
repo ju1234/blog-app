@@ -36,11 +36,6 @@ export function infoProcess(info) {
       case "sex":
         item.title = '性别';
         item.editType = 'select';
-        if (item.value === 1) {
-          item.value = '男'
-        } else {
-          item.value = '女'
-        }
         break;
       case "age":
         item.title = '年龄';

@@ -161,8 +161,8 @@ class Reg extends Component {
                 <img src="/images/reg/sex.png" alt="sex"/>
               </i>
               <select name="sex" ref="sex">
-                <option value="1">男</option>
-                <option value="0">女</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
               </select>
             </div>
             <div>

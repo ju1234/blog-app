@@ -11,3 +11,19 @@
   left: 0;
   right: 0;
 }
+
+
+.isNotLogin{
+  @extend .display_flex;
+  @extend .alignItems_center;
+  @extend .justifyContent_center;
+
+  width: 100%;
+  height: 100%;
+
+
+  p{
+    font-size: 2em;
+    color: #ccc;
+  }
+}

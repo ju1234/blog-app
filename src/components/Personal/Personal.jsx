@@ -11,6 +11,7 @@ import {bindActionCreators} from 'redux'
 //================================================
 import Bar from '../../common/PersonalBar/PersonalBar.jsx'
 import {actionAlterUserInfo} from '../../actions/personalAction.js'
+import {actionGoToLoginPage} from '../../actions/commonAction.js'
 //============================================
 import {infoProcess} from '../../utils/personalUtils.js'
 import personalStyle from './scss/personal.scss'
@@ -18,17 +19,25 @@ import personalStyle from './scss/personal.scss'
 class Personal extends Component {
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({},{actionAlterUserInfo}),props.dispatch)
+    this.actions = bindActionCreators(Object.assign({},{actionAlterUserInfo,actionGoToLoginPage}),props.dispatch)
   }
+
+  static contextTypes = {
+    router: React.PropTypes.object.isRequired
+  };
 
   render() {
     const userInfo = infoProcess(this.props.userInfo);
     return (
       <div className={personalStyle.personalContainer}>
         {
-          userInfo.map((item,index) => {
-            return <Bar info={item} key={index} id={userInfo[0].value} onclick={this.actions.actionAlterUserInfo.bind(this)}/>
-          })
+          this.props.logined?
+            userInfo.map((item,index) => {
+              return <Bar info={item} key={index} id={userInfo[0].value} onclick={this.actions.actionAlterUserInfo.bind(this)}/>
+            }):
+            <div className={personalStyle.isNotLogin} onClick={this.actions.actionGoToLoginPage.bind(this,this.context.router)}>
+              <p>点击登录</p>
+            </div>
         }
       </div>
     )
@@ -38,7 +47,8 @@ class Personal extends Component {
 
 function mapStateToProp(store) {
   return {
-    userInfo: store.login.toJS().userInfo
+    userInfo: store.login.toJS().userInfo,
+    logined: store.login.toJS().logined,
   }
 }
 
