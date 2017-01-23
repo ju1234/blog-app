@@ -25,6 +25,7 @@ export function register(data, status, router) {
     apiPost(api.REG, data)
       .then((msg) => {
         if (msg.msg) {
+          delete data.password;
           // 设置登录信息
           dispatch({
             type: actionType.SET_USER_INFO,
@@ -44,6 +45,8 @@ export function register(data, status, router) {
             type: actionType.SET_FOOTER_ACTIVE,
             payload: [1, 0, 0, 0]
           })
+        }else {
+          alert('系统繁忙请稍后再试')
         }
       })
   }
