@@ -46,3 +46,48 @@ export function actionGoToIndex(router) {
     })
   }
 }
+
+//跳转个人主页
+export function actionGoToPersonal(router) {
+  router.push(paths.PERSONAL);
+  return (dispatch) => {
+    // 设置active
+    dispatch({
+      type: actionType.SET_FOOTER_ACTIVE,
+      payload: [0,0,0,1]
+    });
+
+    //显示头部按钮
+    dispatch({
+      type: actionType.HEADER_BTN_SHOW
+    });
+
+    // 回退按钮隐藏
+    dispatch({
+      type: actionType.HIDE_HEADER_BACKBTN
+    })
+  }
+}
+
+
+// 跳转其他页面
+export function actionGoToOther(router,url,activeArr) {
+  router.push(url);
+  return (dispatch) => {
+    // 设置active
+    dispatch({
+      type: actionType.SET_FOOTER_ACTIVE,
+      payload: activeArr
+    });
+
+    //显示头部按钮
+    dispatch({
+      type: actionType.HEADER_BTN_SHOW
+    });
+
+    // 回退按钮隐藏
+    dispatch({
+      type: actionType.HIDE_HEADER_BACKBTN
+    })
+  }
+}

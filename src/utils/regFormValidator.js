@@ -68,7 +68,7 @@ export function regFormValidator(value, type, msg, status) {
 }
 //
 // 获取字符串长度
-function getByteLen(val) {
+export function getByteLen(val) {
   let len = 0;
   for (let i = 0; i < val.length; i++) {
     let a = val.charAt(i);

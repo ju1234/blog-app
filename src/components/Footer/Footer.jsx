@@ -7,16 +7,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-
-import {footInit,actionGoToIndex} from '../../actions/footerAction.js'
-
+//===================================================================================
+import {footInit,actionGoToIndex,actionGoToOther} from '../../actions/footerAction.js'
+//===================================================================================
+import * as paths from '../../utils/paths.js'
 import footerStyle from './sass/footer.scss'
 
 class Footer extends Component {
 
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({},{footInit,actionGoToIndex}),props.dispatch);
+    this.actions = bindActionCreators(Object.assign({},{footInit,actionGoToIndex,actionGoToOther}),props.dispatch);
   }
 
   static contextTypes = {
@@ -34,13 +35,13 @@ class Footer extends Component {
       <div className={footerStyle.footerContainer}>
         {
           active[0] ?
-            <div onClick={this.actions.actionGoToIndex.bind(this,this.context.router)}>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.INDEX,[1,0,0,0])}>
               <i>
                 <img src="/images/iconActive/index.png" alt=""/>
               </i>
               <span style={{color: '#1296db'}}>首页</span>
             </div> :
-            <div onClick={this.actions.actionGoToIndex.bind(this,this.context.router)}>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.INDEX,[1,0,0,0])}>
               <i>
                 <img src="/images/icon/index.png" alt=""/>
               </i>
@@ -79,13 +80,13 @@ class Footer extends Component {
         }
         {
           active[3] ?
-            <div>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.PERSONAL,[0,0,0,1])}>
               <i>
                 <img src="/images/iconActive/smile.png" alt=""/>
               </i>
               <span style={{color: '#1296db'}}>我的</span>
             </div> :
-            <div>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.PERSONAL,[0,0,0,1])}>
               <i>
                 <img src="/images/icon/smile.png" alt=""/>
               </i>

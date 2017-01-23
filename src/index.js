@@ -28,7 +28,7 @@ import routes from './routes'
 
 // localStorage.setItem('userName','ju');
 // localStorage.setItem('userID','1234');
-localStorage.clear();
+// localStorage.clear();
 
 render(
   routes,document.getElementById('root')
@@ -36,6 +36,5 @@ render(
 
 
 
-// $("#root").html('asdasd')
 
 

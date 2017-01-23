@@ -16,3 +16,6 @@ export const REG = '/api/reg';
 
 // 验证手机是否注册
 export const HAS_THIS_PHONE = '/api/hasThisPhone';
+
+//修改个人信息
+export const ALTER_USER_INFO = '/api/alterUserInfo';

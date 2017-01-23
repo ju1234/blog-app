@@ -11,6 +11,9 @@ export const SHOW_ALERTMODEL = 'SHOW_ALERTMODEL';
 // 设置用户登录信息
 export const SET_USER_INFO = 'SET_USER_INFO';
 
+//修改用户信息
+export const ALTER_USER_INFO = 'ALTER_USER_INFO';
+
 //注销 清除用户登录信息
 export const CLEAR_USER_INFO = 'CLEAR_USER_INFO';
 

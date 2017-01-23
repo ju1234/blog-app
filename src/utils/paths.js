@@ -17,3 +17,6 @@ export const REG = '/reg';
 
 //登录
 export const LOGIN = '/login';
+
+//个人主页
+export const PERSONAL = '/personal';

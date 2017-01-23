@@ -48,6 +48,10 @@ app.get('/reg', (req, res, next) => {
   res.sendFile(path.join(__dirname, "src/index.html"));
 });
 
+app.get('/personal', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
 
 // routes(app);
 

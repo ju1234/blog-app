@@ -15,7 +15,7 @@ import Layout from '../Layout/Layout.jsx';
 import IndexPage from '../components/IndexPage/IndexPage.jsx';
 import Login from '../components/Login/Login.jsx';
 import Reg from '../components/Register/Reg.jsx'
-
+import Personal from '../components/Personal/Personal.jsx'
 
 
 
@@ -27,6 +27,7 @@ const routes = (
         <Route path="/index" component={IndexPage}/>
         <Route path="/login" component={Login}/>
         <Route path="/reg" component={Reg}/>
+        <Route path='/personal' component={Personal}/>
       </Route>
     </Router>
   </Provider>

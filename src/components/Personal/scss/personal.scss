@@ -1,0 +1,13 @@
+@import "../../style/base";
+
+.personalContainer{
+  @extend .display_flex;
+  @extend .flexDirection_column;
+  @extend .justifyContent_spaceAround;
+
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+}
