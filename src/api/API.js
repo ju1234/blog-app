@@ -10,14 +10,11 @@ export function apiGet(url, dataType = 'json',) {
       // url:'http://16.1.30.200:3000/api/all',
       url: `http://16.1.30.200:3000${url}`,
       type: 'get', //GET
-      async: true,    //或false,是否异
+      async: true,
       timeout: 5000,    //超时时间
       dataType: dataType,    //返回的数据格式：json/xml/html/script/jsonp/text
       success: function (data, textStatus, jqXHR) {
-        // console.log(JSON.parse(data));
         resolve(data);
-        // console.log(textStatus)
-        // console.log(jqXHR)
       },
       error: function (xhr, textStatus) {
         console.log('错误');
