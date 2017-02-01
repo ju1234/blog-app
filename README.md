@@ -4,7 +4,7 @@
 ## 项目运行
 ``` bash
 # 安装依赖
-npm install
+cnpm install
 
 # 开启本地服务器localhost:8888
 npm run build
