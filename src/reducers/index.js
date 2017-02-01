@@ -9,14 +9,16 @@ import {combineReducers} from 'redux'
 import layoutReducer from './layoutReducer'
 import loginReducer from './loginReducer.js';
 import headerReducer from './headerReducer.js';
-import footerReducer from './footerReducer.js'
+import footerReducer from './footerReducer.js';
+import homePageArticleReducer from './homePageArticleReducer.js';
 
 
 const reducers = combineReducers({
   login: loginReducer,
   header: headerReducer,
   layout: layoutReducer,
-  footer: footerReducer
+  footer: footerReducer,
+  homePage: homePageArticleReducer
 });
 
 export default reducers;

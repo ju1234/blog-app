@@ -19,3 +19,6 @@ export const HAS_THIS_PHONE = '/api/hasThisPhone';
 
 //修改个人信息
 export const ALTER_USER_INFO = '/api/alterUserInfo';
+
+//获取首页展示文章
+export const GET_HOMEPAGE_ARTICLE = '/api/getArticle';

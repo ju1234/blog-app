@@ -15,7 +15,7 @@ import store from '../store/store';
  /*布局组件*/
 import Layout from '../Layout/Layout.jsx';
  /*主页*/
-import IndexPage from '../components/IndexPage/IndexPage.jsx';
+import HomePage from '../components/HomePage/HomePage.jsx';
  /*登录组件*/
 import Login from '../components/Login/Login.jsx';
  /*注册组件*/
@@ -32,7 +32,7 @@ const routes = (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path='/' component={Layout}>
-        <Route path="/index" component={IndexPage}/>
+        <Route path="/index" component={HomePage}/>
         <Route path="/login" component={Login}/>
         <Route path="/reg" component={Reg}/>
         <Route path='/personal'>

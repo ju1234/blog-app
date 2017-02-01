@@ -35,3 +35,6 @@ export const HEADER_BTN_SHOW = 'HEADER_BTN_SHOW';
 
 // 设置底部active
 export const SET_FOOTER_ACTIVE = 'SET_FOOTER_ACTIVE';
+
+// 设置首页展示文章数据
+export const SET_HOMEPAGE_ARTICLE = 'SET_HOMEPAGE_ARTICLE';
