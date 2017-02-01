@@ -25,3 +25,6 @@ export const GET_HOMEPAGE_ARTICLE = '/api/getArticle';
 
 //点击量+1
 export const HITS_ADD = '/api/hits';
+
+//获取文章查看页 文章数据
+export const GET_VIEW_ARTICLE = '/api/getViewArticle';
