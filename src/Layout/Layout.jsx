@@ -21,7 +21,6 @@ import Login from '../components/Login/Login'
 import layoutStyle from './scss/layout.scss'
 
 
-
 class Layout extends Component {
   constructor(props) {
     super(props);
@@ -39,15 +38,15 @@ class Layout extends Component {
         <div className={layoutStyle.header}>
           <Header/>
         </div>
-        <div className={layoutStyle.placeholder}>
+        <div className={layoutStyle.content}>
           {this.props.children}
         </div>
         <div className={layoutStyle.footer}>
           <Footer/>
         </div>
         {
-          layout.showAlert?
-            <AlertModel logined={this.props.login.get('logined')}/>:
+          layout.showAlert ?
+            <AlertModel logined={this.props.login.get('logined')}/> :
             null
         }
       </div>

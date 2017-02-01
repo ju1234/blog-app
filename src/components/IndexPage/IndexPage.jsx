@@ -20,7 +20,8 @@ export default class Index extends Component{
   render(){
     return (
       <div>
-        index
+        {/*<img src="http://localhost:3000/images/1.jpg" alt=""/>*/}
+        asd
       </div>
     )
   }

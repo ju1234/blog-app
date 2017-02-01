@@ -20,3 +20,6 @@ export const LOGIN = '/login';
 
 //个人主页
 export const PERSONAL = '/personal';
+
+//用户资料
+export const PROFILE = '/personal/profile';

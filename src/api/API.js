@@ -29,8 +29,8 @@ export function apiGet(url, dataType = 'json',) {
 export function apiPost(url,data,dataType = 'json') {
   return new Promise((resolve, reject) => {
     $.ajax({
-      // url: 'http://16.1.30.200:3000/api/all',
       url: `http://16.1.30.200:3000${url}`,
+      // url: `http://16.1.30.200:3000${url}`,
       type: 'post', //GET
       async: true,    //或false,是否异
       data: data,

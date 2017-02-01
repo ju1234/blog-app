@@ -2,24 +2,23 @@
  * 文件说明： 个人主页
  * 详细描述：
  * 创建者： JU
- * 时间： 2017/1/23W
+ * 时间： 2017/2/1
  */
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
-//================================================
-import Bar from '../../common/PersonalBar/PersonalBar.jsx'
-import {actionAlterUserInfo} from '../../actions/personalAction.js'
+import {bindActionCreators} from 'redux';
+//==================================================================
+import * as path from '../../utils/paths.js'
 import {actionGoToLoginPage} from '../../actions/commonAction.js'
-//============================================
-import {infoProcess} from '../../utils/personalUtils.js'
+//==================================================================
 import personalStyle from './scss/personal.scss'
+
 
 class Personal extends Component {
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({},{actionAlterUserInfo,actionGoToLoginPage}),props.dispatch)
+    this.actions = bindActionCreators(Object.assign({}, {actionGoToLoginPage}), props.dispatch)
   }
 
   static contextTypes = {
@@ -27,14 +26,24 @@ class Personal extends Component {
   };
 
   render() {
-    const userInfo = infoProcess(this.props.userInfo);
     return (
       <div className={personalStyle.personalContainer}>
         {
-          this.props.logined?
-            userInfo.map((item,index) => {
-              return <Bar info={item} key={index} id={userInfo[0].value} onclick={this.actions.actionAlterUserInfo.bind(this)}/>
-            }):
+          this.props.logined ?
+            <div>
+              <div onClick={() => {this.context.router.push(path.PROFILE)}}>
+                <p>个人资料</p>
+              </div>
+              <div>
+                <p>我的文章</p>
+              </div>
+              <div>
+                <p>我的收藏</p>
+              </div>
+              <div>
+                <p>再来一篇</p>
+              </div>
+            </div>:
             <div className={personalStyle.isNotLogin} onClick={this.actions.actionGoToLoginPage.bind(this,this.context.router)}>
               <p>点击登录</p>
             </div>
@@ -44,14 +53,11 @@ class Personal extends Component {
   }
 }
 
-
-function mapStateToProp(store) {
+function mapStateToProps(store) {
   return {
-    userInfo: store.login.toJS().userInfo,
-    logined: store.login.toJS().logined,
+    logined: store.login.toJS().logined
   }
 }
 
-export default connect(mapStateToProp)(Personal);
 
-
+export default connect(mapStateToProps)(Personal);
