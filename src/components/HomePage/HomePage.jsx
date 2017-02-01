@@ -32,7 +32,6 @@ class HomePage extends Component{
   }
 
   render(){
-    console.log(this.props.articleList)
     return (
       <div className={homepageStyle.homepageContainer}>
         {

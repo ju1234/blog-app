@@ -38,3 +38,6 @@ export const SET_FOOTER_ACTIVE = 'SET_FOOTER_ACTIVE';
 
 // 设置首页展示文章数据
 export const SET_HOMEPAGE_ARTICLE = 'SET_HOMEPAGE_ARTICLE';
+
+//设置文章查看页数据
+export const SET_VIEW_ARTICLE = 'SET_VIEW_ARTICLE';

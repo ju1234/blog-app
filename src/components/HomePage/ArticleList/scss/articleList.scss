@@ -1,3 +1,5 @@
+@import "../../../style/base";
+
 .articleList{
   width: 100%;
   background: #fff;
@@ -6,11 +8,16 @@
 
   >div{
     &:first-child{
+      @extend .display_flex;
+      @extend .alignItems_center;
+
       i{
         display: inline-block;
         width: 40px;
         height: 40px;
         margin-right: 20px;
+        border-radius: 50%;
+        overflow: hidden;
 
         img{
           width: 100%;

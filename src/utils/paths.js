@@ -23,3 +23,6 @@ export const PERSONAL = '/personal';
 
 //用户资料
 export const PROFILE = '/personal/profile';
+
+// 文章查看页
+export const VIEW = '/view';

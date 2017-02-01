@@ -22,3 +22,6 @@ export const ALTER_USER_INFO = '/api/alterUserInfo';
 
 //获取首页展示文章
 export const GET_HOMEPAGE_ARTICLE = '/api/getArticle';
+
+//点击量+1
+export const HITS_ADD = '/api/hits';

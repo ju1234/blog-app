@@ -24,6 +24,8 @@ import Reg from '../components/Register/Reg.jsx'
 import Personal from '../components/Personal/Personal.jsx'
  /*用户资料组件*/
 import Profile from '../components/Profile/Profile.jsx'
+/*文章查看页*/
+import View from '../components/View/View.jsx'
 
 
 
@@ -35,6 +37,7 @@ const routes = (
         <Route path="/index" component={HomePage}/>
         <Route path="/login" component={Login}/>
         <Route path="/reg" component={Reg}/>
+        <Route path='/view/:id' components={View}/>
         <Route path='/personal'>
           <IndexRoute component={Personal}/>
           <Route path='profile' component={Profile}/>
