@@ -51,8 +51,12 @@ class Login extends Component {
     this.actions.actionLogin(data,msg,this.context.router)
   }
 
-  onChange() {
-
+  componentDidMount(){
+    window.addEventListener('keydown',(e)=>{
+      if(e.keyCode === 13){
+        this.onSubmit();
+      }
+    })
   }
 
 

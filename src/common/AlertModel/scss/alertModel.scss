@@ -7,6 +7,7 @@
   right: 0;
   bottom: 0;
   background: rgba(68,68,68,0.5);
+  z-index: 100;
 
   >div{
     @extend .display_flex;

@@ -38,7 +38,6 @@ class Layout extends Component {
       <div>
         <div className={layoutStyle.header}>
           <Header/>
-          {/*<Login/>*/}
         </div>
         <div className={layoutStyle.placeholder}>
           {this.props.children}
