@@ -27,8 +27,21 @@
 
       span{
         font-weight: 600;
+        margin-right: auto;
+
+        +button{
+          padding: 5px;
+          border-radius: 5px;
+          background: #f00;
+          color: #fff;
+        }
       }
     }
+
+    +div{
+      word-break:break-all;
+    }
+
     &:last-child{
       height: 22px;
       span{

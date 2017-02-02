@@ -30,7 +30,6 @@ class View extends Component{
   }
 
   render(){
-    console.log(this.props.article);
     return (
       <div className={viewStyle.viewContainer}>
         <h4>{this.props.article.title}</h4>

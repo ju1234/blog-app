@@ -10,14 +10,31 @@ import * as actionType from '../utils/actionTypes.js';
 import * as api from '../utils/api.js'
 import * as path from '../utils/paths.js'
 
+
 export function getMyArticle(author_id) {
   return (dispatch) => {
-    apiPost(api.GET_MYARTICLE,{id: author_id})
+    apiPost(api.GET_MYARTICLE, {id: author_id})
       .then((data) => {
         dispatch({
           type: actionType.SET_MYARTICLE,
           payload: JSON.parse(data.data)
         })
+      })
+  }
+}
+
+
+export function deleteArticle(articleInfo) {
+  return (dispatch) => {
+    apiPost(api.DELETE_ARTICLE, {id: articleInfo.id})
+      .then((data) => {
+        apiPost(api.GET_MYARTICLE, {id: articleInfo.author_id})
+          .then((data) => {
+            dispatch({
+              type: actionType.SET_MYARTICLE,
+              payload: JSON.parse(data.data)
+            })
+          })
       })
   }
 }

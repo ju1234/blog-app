@@ -5,12 +5,12 @@
  * 时间： 2017/2/1
  */
 
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 //====================================================
 import ArticleList from '../../common/ArticleList/ArticleList.jsx';
-import {getMyArticle} from '../../actions/myArticleAction.js';
+import {getMyArticle,deleteArticle} from '../../actions/myArticleAction.js';
 import {goToView} from '../../actions/commonAction.js';
 //====================================================
 import myArticleStyle from './scss/myArticle.scss';
@@ -18,13 +18,14 @@ import * as api from '../../utils/api.js';
 import {apiPost} from '../../api/API.js';
 
 
-class MyArticle extends Component{
-  constructor(props){
+class MyArticle extends Component {
+  constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({},{
+    this.actions = bindActionCreators(Object.assign({}, {
       getMyArticle,
-      goToView
-    }),props.dispatch);
+      goToView,
+      deleteArticle
+    }), props.dispatch);
   }
 
 
@@ -32,27 +33,33 @@ class MyArticle extends Component{
     router: React.PropTypes.object.isRequired
   };
 
-  componentDidMount(){
-    // this.actions.getMyArticle(2)
+  componentDidMount() {
     this.actions.getMyArticle(this.props.userInfo.id);
   }
 
-  clickHandle(articleInfo){
-    this.actions.goToView(this.context.router,articleInfo);
+  deleteHandle(articleInfo) {
+    if (confirm("您确定删除吗？")) {
+      this.actions.deleteArticle(articleInfo);
+    }
   }
 
-  render(){
-    console.log(this.props.myArticle);
+  clickHandle(articleInfo) {
+    this.actions.goToView(this.context.router, articleInfo);
+  }
+
+  render() {
     let count = this.props.myArticle.length;
     return (
       <div>
         {
-          count?
+          count ?
             <div className={myArticleStyle.myArticleContainer}>{
-              this.props.myArticle.map((item,index) => {
-                return <ArticleList key={index} articleInfo={item} delete='true' clickHandle={this.clickHandle.bind(this)}/>
+              this.props.myArticle.map((item, index) => {
+                return <ArticleList key={index} articleInfo={item}
+                                    deleteHandle={this.deleteHandle.bind(this)}
+                                    clickHandle={this.clickHandle.bind(this)}/>
               })
-            }</div>:
+            }</div> :
             <div>
               您还没有发表任何文章
             </div>

@@ -31,3 +31,6 @@ export const GET_VIEW_ARTICLE = '/api/getViewArticle';
 
 // 获取我的文章数据
 export const GET_MYARTICLE = '/api/getMyArticle';
+
+//删除文章
+export const DELETE_ARTICLE = '/api/delAtc';
