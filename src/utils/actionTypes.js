@@ -47,3 +47,6 @@ export const SET_MYARTICLE = 'GET_MYARTICLE';
 
 //修改历史路径
 export const CHANGE_HISTORY = 'CHANGE_HISTORY';
+
+//设置文章是否收藏
+export const SET_FAVORITE = 'SET_FAVORITE';

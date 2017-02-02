@@ -20,6 +20,10 @@ export default function viewReducer(state = Immutable.fromJS(init),action) {
       return state.update('article',() => {
           return action.payload;
         });
+    case actionType.SET_FAVORITE:
+      return state.update('favorited',() => {
+        return action.payload
+      });
     default:
       return state;
   }

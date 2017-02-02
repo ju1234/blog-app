@@ -11,7 +11,7 @@ import {bindActionCreators} from 'redux';
 import moment from 'moment'
 //==================================================
 import {actionGoToLoginPage} from  '../../actions/commonAction.js'
-import {getViewArticle} from '../../actions/viewAction.js'
+import {getViewArticle,setFavorite} from '../../actions/viewAction.js'
 //==================================================
 import viewStyle from './scss/view.scss'
 
@@ -20,7 +20,8 @@ class View extends Component {
     super(props);
     this.actions = bindActionCreators(Object.assign({}, {
       getViewArticle,
-      actionGoToLoginPage
+      actionGoToLoginPage,
+      setFavorite
     }), props.dispatch)
   }
 
@@ -28,29 +29,62 @@ class View extends Component {
     router: React.PropTypes.object.isRequired
   };
 
+  ifFavorite(){
+    if(this.props.logined){
+      const favorite = this.props.userInfo.favorite;
+      if(favorite !== null){
+        const favArr = favorite.split(',');
+        if(favArr.some((item) => {
+            return this.props.article.id === item
+          })){
+
+          this.actions.setFavorite(true);
+        }else {
+          this.actions.setFavorite(false);
+        }
+      }else {
+        this.actions.setFavorite(false);
+      }
+    }else {
+      this.actions.setFavorite(false);
+    }
+  }
+
   componentDidMount() {
     if (JSON.stringify(this.props.article) === '{}') {
       this.actions.getViewArticle(location.href.split('id=')[1])
     }
+    if(this.props.article){
+      this.ifFavorite();
+    }
   }
 
-  favoriteClick(){
-    if(!this.props.logined){
-      if(confirm('您还没有登录，是否登录？')){
+  componentDidUpdate() {
+    console.log(this.props.userInfo)
+    this.ifFavorite();
+  }
+
+  favoriteClick() {
+    if (!this.props.logined) {
+      if (confirm('您还没有登录，是否登录？')) {
         this.actions.actionGoToLoginPage(this.context.router)
       }
+    } else {
+
     }
   }
 
   render() {
+    console.log(1)
+
     return (
       <div className={viewStyle.viewContainer}>
         <div>
           <h4>{this.props.article.title}</h4>
           <i onClick={this.favoriteClick.bind(this)}>
             {
-              this.props.favorited?
-                <img src="/images/icon/enjoy1.png" alt=""/>:
+              this.props.favorited ?
+                <img src="/images/icon/enjoy1.png" alt=""/> :
                 <img src="/images/icon/enjoy.png" alt=""/>
             }
           </i>
