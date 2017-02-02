@@ -34,7 +34,7 @@ class Personal extends Component {
               <div onClick={() => {this.context.router.push(path.PROFILE)}}>
                 <p>个人资料</p>
               </div>
-              <div>
+              <div onClick={() => {this.context.router.push(path.MYARTICLE)}}>
                 <p>我的文章</p>
               </div>
               <div>

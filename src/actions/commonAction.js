@@ -132,4 +132,17 @@ export function actionSetFooterActive(payload) {
 }
 
 
+// 跳转view页面
+export function goToView(router,payload) {
+  router.push(paths.VIEW +'/id='+ payload.id);
+  return (dispatch) => {
+    dispatch({
+      type: actionType.SET_VIEW_ARTICLE,
+      payload: payload
+    })
+  }
+}
+
+
+
 

@@ -6,28 +6,28 @@
  */
 
 import React from 'react'
-import {Router,Route,browserHistory,IndexRoute} from 'react-router'
+import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 import {Provider} from 'react-redux'
 //=======================================================================
 
 import store from '../store/store';
 //=======================================================================
- /*布局组件*/
+/*布局组件*/
 import Layout from '../Layout/Layout.jsx';
- /*主页*/
+/*主页*/
 import HomePage from '../components/HomePage/HomePage.jsx';
- /*登录组件*/
+/*登录组件*/
 import Login from '../components/Login/Login.jsx';
- /*注册组件*/
+/*注册组件*/
 import Reg from '../components/Register/Reg.jsx'
- /*个人主页组件*/
+/*个人主页组件*/
 import Personal from '../components/Personal/Personal.jsx'
- /*用户资料组件*/
+/*用户资料组件*/
 import Profile from '../components/Profile/Profile.jsx'
 /*文章查看页*/
 import View from '../components/View/View.jsx'
-
-
+/*我的文章页*/
+import MyArticle from '../components/MyArticle/MyArticle.jsx'
 
 
 const routes = (
@@ -41,12 +41,14 @@ const routes = (
         <Route path='/personal'>
           <IndexRoute component={Personal}/>
           <Route path='profile' component={Profile}/>
+          <Route path='myArticle' >
+            <IndexRoute component={MyArticle}/>
+          </Route>
         </Route>
       </Route>
     </Router>
   </Provider>
 );
-
 
 
 export default routes

@@ -28,3 +28,6 @@ export const HITS_ADD = '/api/hits';
 
 //获取文章查看页 文章数据
 export const GET_VIEW_ARTICLE = '/api/getViewArticle';
+
+// 获取我的文章数据
+export const GET_MYARTICLE = '/api/getMyArticle';

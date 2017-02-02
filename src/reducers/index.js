@@ -11,7 +11,8 @@ import loginReducer from './loginReducer.js';
 import headerReducer from './headerReducer.js';
 import footerReducer from './footerReducer.js';
 import homePageArticleReducer from './homePageArticleReducer.js';
-import viewReducer from './viewReducer.js'
+import viewReducer from './viewReducer.js';
+import myArticleReducer from './myArticleReducer.js'
 
 
 const reducers = combineReducers({
@@ -20,7 +21,8 @@ const reducers = combineReducers({
   layout: layoutReducer,
   footer: footerReducer,
   homePage: homePageArticleReducer,
-  view: viewReducer
+  view: viewReducer,
+  myArticle: myArticleReducer
 });
 
 export default reducers;

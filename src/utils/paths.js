@@ -26,3 +26,6 @@ export const PROFILE = '/personal/profile';
 
 // 文章查看页
 export const VIEW = '/view';
+
+// 我的文章页
+export const MYARTICLE = '/personal/myArticle';

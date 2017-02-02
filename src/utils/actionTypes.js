@@ -41,3 +41,6 @@ export const SET_HOMEPAGE_ARTICLE = 'SET_HOMEPAGE_ARTICLE';
 
 //设置文章查看页数据
 export const SET_VIEW_ARTICLE = 'SET_VIEW_ARTICLE';
+
+// 设置我的文章数据
+export const SET_MYARTICLE = 'GET_MYARTICLE';
