@@ -9,6 +9,7 @@ import * as actionType from '../utils/actionTypes.js'
 import * as api from '../utils/api.js'
 import {apiPost} from '../api/API.js'
 
+// 修改用户资料
 export function actionAlterUserInfo(id,value,type) {
   console.log(id,value,type)
   return (dispatch) => {

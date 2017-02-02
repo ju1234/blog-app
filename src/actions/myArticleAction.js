@@ -10,7 +10,7 @@ import * as actionType from '../utils/actionTypes.js';
 import * as api from '../utils/api.js'
 import * as path from '../utils/paths.js'
 
-
+// 获取我的文章数据
 export function getMyArticle(author_id) {
   return (dispatch) => {
     apiPost(api.GET_MYARTICLE, {id: author_id})
@@ -23,7 +23,7 @@ export function getMyArticle(author_id) {
   }
 }
 
-
+// 删除文章
 export function deleteArticle(articleInfo) {
   return (dispatch) => {
     apiPost(api.DELETE_ARTICLE, {id: articleInfo.id})
