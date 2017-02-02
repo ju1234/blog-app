@@ -15,7 +15,6 @@ export function getViewArticle(id) {
   return (dispatch) => {
     apiPost(api.GET_VIEW_ARTICLE, {id: id})
       .then((data) => {
-
         dispatch({
           type: actionType.SET_VIEW_ARTICLE,
           payload: JSON.parse(data.data)[0]
