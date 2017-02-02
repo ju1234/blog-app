@@ -48,7 +48,8 @@ class Login extends Component {
       username: username,
       password: password
     };
-    this.actions.actionLogin(data,msg,this.context.router)
+    console.log(this.props.history)
+    this.actions.actionLogin(data,msg,this.context.router,this.props.history)
   }
 
   componentDidMount(){
@@ -102,5 +103,10 @@ class Login extends Component {
   }
 }
 
+function mapStateToProps(store) {
+  return {
+    history: store.layout.toJS().history
+  }
+}
 
-export default connect()(Login);
+export default connect(mapStateToProps)(Login);

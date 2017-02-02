@@ -5,36 +5,56 @@
   min-height: 100%;
   background: #fff;
 
-  h4{
-    font-size: 2.2em;
-    margin-bottom: 5px;
+  >div{
+    word-break:break-all;
 
-    +div{
+    &:first-child{
       @extend .display_flex;
+      @extend .justifyContent_spaceBetween;
       @extend .alignItems_center;
-
-      margin-bottom: 8px;
       i{
         display: inline-block;
         width: 40px;
         height: 40px;
-        border-radius: 50%;
-        overflow: hidden;
-        margin-right: 20px;
+        flex-shrink: 0;
 
         img{
           width: 100%;
         }
       }
 
-      span{
-        color: #999;
-        //margin-right: 20px;
+      +div{
+        @extend .display_flex;
+        @extend .alignItems_center;
+        margin-bottom: 8px;
+
+        i{
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 20px;
+
+          img{
+            width: 100%;
+          }
+        }
+
+        span{
+          color: #999;
+          //margin-right: 20px;
+        }
       }
     }
+
+    h4{
+      font-size: 2.2em;
+      margin-bottom: 5px;
+    }
+
+
   }
 
-  >div{
-    word-break:break-all;
-  }
+
 }

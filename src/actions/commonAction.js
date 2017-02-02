@@ -12,7 +12,7 @@ import * as api from '../utils/api.js'
 import {apiPost} from '../api/API.js'
 
 // 登录
-export function actionLogin(data,msg,router) {
+export function actionLogin(data,msg,router,path) {
   return (dispatch) => {
     apiPost(api.VERIFY_PASSWORD,data)
       .then((res) => {
@@ -21,8 +21,8 @@ export function actionLogin(data,msg,router) {
         }else if(res.msg === undefined){
           msg.usernameMessage.innerHTML = '该用户不存在';
         }else if(res.msg === true){
-          // 跳转主页
-          router.push(paths.INDEX);
+          // 跳转上一页
+          router.push(path);
           // 设置footer  active
           dispatch({
             type: actionType.SET_FOOTER_ACTIVE,
@@ -69,10 +69,10 @@ export function actionGoToLoginPage(router) {
 }
 
 //注销
-export function actionLogout(router) {
+export function actionLogout(router,path) {
   return (dispatch) => {
-    // 跳转主页
-    router.push(paths.INDEX);
+    // 跳转上一页
+    router.push(path);
     // 设置footer  active
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
@@ -143,6 +143,15 @@ export function goToView(router,payload) {
   }
 }
 
+// 修改历史路径
+export function changeHistoy(path){
+  return (dispatch) => {
+    dispatch({
+      type: actionType.CHANGE_HISTORY,
+      payload: path
+    })
+  }
+}
 
 
 

@@ -11,7 +11,7 @@ import * as path from '../utils/paths.js'
 import {apiPost} from '../api/API.js'
 
 // 注册数据判断
-export function register(data, status, router) {
+export function register(data, status, router,path) {
   return (dispatch) => {
     delete data.ntpassword;
     for (let key in data) {
@@ -34,8 +34,8 @@ export function register(data, status, router) {
               logined: true
             }
           });
-          // 跳转主页
-          router.push(path.INDEX);
+          // 跳转上一页
+          router.push(path);
           //头部右侧按钮显示
           dispatch({
             type: actionType.HEADER_BTN_SHOW

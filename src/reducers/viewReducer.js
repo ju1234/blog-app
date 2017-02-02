@@ -8,10 +8,18 @@
 import Immutable from 'immutable';
 import * as actionType from '../utils/actionTypes.js'
 
-export default function viewReducer(state = Immutable.fromJS({}),action) {
+const init = {
+  article: {},
+  favorited: false
+};
+
+
+export default function viewReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
     case actionType.SET_VIEW_ARTICLE:
-      return Immutable.fromJS(action.payload);
+      return state.update('article',() => {
+          return action.payload;
+        });
     default:
       return state;
   }

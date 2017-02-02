@@ -36,7 +36,7 @@ class AlertModel extends Component {
       <div className={alertModelStyle.alertModel} onClick={this.actions.actionHideAlert.bind(this)}>
         {this.props.logined?
           <div>
-            <Button text="注销" onclick={this.actions.actionLogout.bind(this,this.context.router)}/>
+            <Button text="注销" onclick={this.actions.actionLogout.bind(this,this.context.router,this.props.history)}/>
           </div>:
           <div>
             <Button text="登录" onclick={this.actions.actionGoToLoginPage.bind(this,this.context.router)}/>
@@ -48,5 +48,10 @@ class AlertModel extends Component {
   }
 }
 
+function mapStateToProps(store) {
+  return {
+    history: store.layout.toJS().history
+  }
+}
 
-export default connect()(AlertModel);
+export default connect(mapStateToProps)(AlertModel);

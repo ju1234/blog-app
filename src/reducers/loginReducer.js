@@ -14,7 +14,8 @@ const init = localStorage.getItem('BLOG_USER_INFO')?
     userInfo: {
       name: "BLOG"
     },
-    logined: false
+    logined: false,
+
   };
 
 export default function loginReducer(state = Immutable.fromJS(init),action){

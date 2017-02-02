@@ -44,3 +44,6 @@ export const SET_VIEW_ARTICLE = 'SET_VIEW_ARTICLE';
 
 // 设置我的文章数据
 export const SET_MYARTICLE = 'GET_MYARTICLE';
+
+//修改历史路径
+export const CHANGE_HISTORY = 'CHANGE_HISTORY';

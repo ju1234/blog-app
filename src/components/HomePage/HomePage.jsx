@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 //==========================================================
 import {getArticle} from '../../actions/homePageAction.js'
-import {goToView} from '../../actions/commonAction.js'
+import {goToView,changeHistoy} from '../../actions/commonAction.js'
 //==========================================================
 import ArticleList from '../../common/ArticleList/ArticleList.jsx';
 import homepageStyle from './scss/homepage.scss'
@@ -24,7 +24,8 @@ class HomePage extends Component{
     super(props);
     this.actions = bindActionCreators(Object.assign({
       getArticle,
-      goToView
+      goToView,
+      changeHistoy
     },{}),props.dispatch)
   }
 
@@ -40,7 +41,8 @@ class HomePage extends Component{
 
   clickHandle(articleInfo){
     this.actions.goToView(this.context.router,articleInfo);
-    apiPost(api.HITS_ADD,{id: articleInfo.id})
+    apiPost(api.HITS_ADD,{id: articleInfo.id});
+    this.actions.changeHistoy(location.href.split('8888')[1])
   }
 
   render(){

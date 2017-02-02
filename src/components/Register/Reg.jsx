@@ -50,7 +50,7 @@ class Reg extends Component {
   onSubmitHandle(data, status = this.status, router = this.context.router) {
     submitValidator(data, status)
       .then(() => {
-        this.actions.register(data, status, router)
+        this.actions.register(data, status, router,this.props.history)
       }).catch((status) => {
         status.map((item,index) => {
           if(item === 0){
@@ -227,8 +227,13 @@ class Reg extends Component {
   }
 }
 
+function mapStateToProps(store) {
+  return {
+    history: store.layout.toJS().history
+  }
+}
 
-export default connect()(Reg)
+export default connect(mapStateToProps)(Reg)
 
 
 
