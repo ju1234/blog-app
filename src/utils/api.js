@@ -34,3 +34,6 @@ export const GET_MYARTICLE = '/api/getMyArticle';
 
 //删除文章
 export const DELETE_ARTICLE = '/api/delAtc';
+
+//修改我的收藏
+export const CHANGE_MY_FAVORITE = '/api/changeMyFavorite';

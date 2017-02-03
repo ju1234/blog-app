@@ -24,10 +24,12 @@ export function getViewArticle(id) {
   }
 }
 
-// 设置文章收藏
+// 设置文章收藏icon 显示
 export function setFavorite(msg) {
   return (dispatch) => {
+    console.log(msg)
     if (msg) {
+      console.log('asd');
       dispatch({
         type: actionType.SET_FAVORITE,
         payload: true
@@ -38,5 +40,27 @@ export function setFavorite(msg) {
         payload: false
       })
     }
+  }
+}
+
+// 修改我的收藏
+export function changeMyFavorite(id,author_id,msg) {
+  return (dispatch) => {
+    console.log('id',id,"::msg",msg);
+    const data = {
+      id: id,
+      author_id: author_id,
+      msg: msg
+    };
+    apiPost(api.CHANGE_MY_FAVORITE,data)
+      .then((data) => {
+        dispatch({
+          type: actionType.SET_USER_INFO,
+          payload: {
+            userInfo: data.data,
+            logined: true
+          }
+        })
+      })
   }
 }

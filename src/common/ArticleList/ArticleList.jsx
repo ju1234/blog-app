@@ -18,6 +18,13 @@ export default class ArticleList extends Component {
   }
 
   render() {
+    const deleteBtn = this.props.deleteHandle ?
+      (<button type="button"
+               onClick={this.props.deleteHandle.bind(this, this.props.articleInfo)}
+      >删除</button>) :
+      null;
+
+
     return (
       <div className={articleListStyle.articleList}>
         <div>
@@ -25,13 +32,7 @@ export default class ArticleList extends Component {
             <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt=""/>
           </i>
           <span>{this.props.articleInfo.title}</span>
-          {
-            this.props.deleteHandle ?
-              <button type="button"
-                      onClick={this.props.deleteHandle.bind(this, this.props.articleInfo)}
-              >删除</button> :
-              null
-          }
+          {deleteBtn}
         </div>
         <div onClick={this.props.clickHandle.bind(this, this.props.articleInfo)}>
           <span>{this.props.articleInfo.author + "："}</span>

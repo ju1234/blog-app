@@ -11,7 +11,7 @@ import {bindActionCreators} from 'redux';
 import moment from 'moment'
 //==================================================
 import {actionGoToLoginPage} from  '../../actions/commonAction.js'
-import {getViewArticle, setFavorite} from '../../actions/viewAction.js'
+import {getViewArticle, setFavorite,changeMyFavorite} from '../../actions/viewAction.js'
 //==================================================
 import viewStyle from './scss/view.scss'
 
@@ -21,7 +21,8 @@ class View extends Component {
     this.actions = bindActionCreators(Object.assign({}, {
       getViewArticle,
       actionGoToLoginPage,
-      setFavorite
+      setFavorite,
+      changeMyFavorite
     }), props.dispatch)
   }
 
@@ -31,24 +32,20 @@ class View extends Component {
 
   // 是否被收藏
   ifFavorite() {
-    if (this.props.logined && this.props.article) {
+    if (this.props.userInfo.favorite && this.props.article) {
       const favorite = this.props.userInfo.favorite;
-      if (favorite !== null) {
-        const favArr = favorite.split(',');
-        if (favArr.some((item) => {
-            return this.props.article.id === item
-          })) {
-
-          this.actions.setFavorite(true);
-        } else {
-          this.actions.setFavorite(false);
-        }
+      const favArr = favorite.split(',');
+      if (favArr.some((item) => {
+          return this.props.article.id === item
+        })) {
+        this.actions.setFavorite(true);
       } else {
         this.actions.setFavorite(false);
       }
     } else {
       this.actions.setFavorite(false);
     }
+
   }
 
   componentDidMount() {
@@ -68,11 +65,20 @@ class View extends Component {
         this.actions.actionGoToLoginPage(this.context.router)
       }
     } else {
-      //补全
+      if(this.props.favorited){
+        //取消收藏
+        this.actions.changeMyFavorite(this.props.article.id,this.props.userInfo.id,true);
+
+      }else{
+        // 收藏
+        this.actions.changeMyFavorite(this.props.article.id,this.props.userInfo.id,false);
+      }
     }
   }
 
   render() {
+    const favoriteImgSrc = this.props.favorited ? 'enjoy1.png' : 'enjoy.png';
+
     return (
       <div className={viewStyle.viewContainer}>
         {
@@ -81,11 +87,7 @@ class View extends Component {
               <div>
                 <h4>{this.props.article.title}</h4>
                 <i onClick={this.favoriteClick.bind(this)}>
-                  {
-                    this.props.favorited ?
-                      <img src="/images/icon/enjoy1.png" alt=""/> :
-                      <img src="/images/icon/enjoy.png" alt=""/>
-                  }
+                  <img src={`\/images\/icon\/${favoriteImgSrc}`} alt=""/> :
                 </i>
               </div>
               <div>
