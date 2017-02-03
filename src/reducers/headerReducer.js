@@ -12,7 +12,7 @@ import * as actionType from '../utils/actionTypes'
 const init = {
   back: false,
   btn: true,
-  title: '首页'
+  title: ''
 };
 
 

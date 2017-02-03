@@ -10,8 +10,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import moment from 'moment'
 //==================================================
-import {actionGoToLoginPage} from  '../../actions/commonAction.js'
-import {getViewArticle, setFavorite,changeMyFavorite} from '../../actions/viewAction.js'
+import {actionGoToLoginPage} from  '../../actions/commonAction.js';
+import {getViewArticle, setFavorite,changeMyFavorite} from '../../actions/viewAction.js';
+import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
 //==================================================
 import viewStyle from './scss/view.scss'
 
@@ -22,7 +23,8 @@ class View extends Component {
       getViewArticle,
       actionGoToLoginPage,
       setFavorite,
-      changeMyFavorite
+      changeMyFavorite,
+      actionChangeTitle
     }), props.dispatch)
   }
 
@@ -53,10 +55,12 @@ class View extends Component {
       this.actions.getViewArticle(location.href.split('id=')[1])
     }
     this.ifFavorite();
+
   }
 
   componentDidUpdate() {
     this.ifFavorite();
+    this.actions.actionChangeTitle(this.props.article.title);
   }
 
   favoriteClick() {
