@@ -9,8 +9,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 //==================================================================
-import * as path from '../../utils/paths.js'
-import {actionGoToLoginPage} from '../../actions/commonAction.js'
+import * as path from '../../utils/paths.js';
+import {actionGoToLoginPage} from '../../actions/commonAction.js';
+import {actionGoToOther} from '../../actions/footerAction.js';
 //==================================================================
 import personalStyle from './scss/personal.scss'
 
@@ -18,7 +19,10 @@ import personalStyle from './scss/personal.scss'
 class Personal extends Component {
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({}, {actionGoToLoginPage}), props.dispatch)
+    this.actions = bindActionCreators(Object.assign({}, {
+      actionGoToLoginPage,
+      actionGoToOther
+    }), props.dispatch)
   }
 
   static contextTypes = {
@@ -37,7 +41,7 @@ class Personal extends Component {
               <div onClick={() => {this.context.router.push(path.MYARTICLE)}}>
                 <p>我的文章</p>
               </div>
-              <div>
+              <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,path.MYFAVORITE,[0,1,0,0])}>
                 <p>我的收藏</p>
               </div>
               <div>

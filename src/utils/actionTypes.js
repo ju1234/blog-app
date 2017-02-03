@@ -52,4 +52,6 @@ export const CHANGE_HISTORY = 'CHANGE_HISTORY';
 //设置文章是否收藏
 export const SET_FAVORITE = 'SET_FAVORITE';
 
+// 设置我的收藏数据
+export const MYFAVORITE_ARTICLE = 'MYFAVORITE_ARTICLE';
 

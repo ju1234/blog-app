@@ -29,3 +29,6 @@ export const VIEW = '/view';
 
 // 我的文章页
 export const MYARTICLE = '/personal/myArticle';
+
+//我的收藏页
+export const MYFAVORITE = '/myFavorite';

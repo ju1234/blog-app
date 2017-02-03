@@ -17,7 +17,11 @@ class Footer extends Component {
 
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({},{footInit,actionGoToIndex,actionGoToOther}),props.dispatch);
+    this.actions = bindActionCreators(Object.assign({},{
+      footInit,
+      actionGoToIndex,
+      actionGoToOther
+    }),props.dispatch);
   }
 
   static contextTypes = {
@@ -50,13 +54,13 @@ class Footer extends Component {
         }
         {
           active[1] ?
-            <div>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.MYFAVORITE,[0,1,0,0])}>
               <i>
                 <img src="/images/iconActive/favorite.png" alt=""/>
               </i>
               <span style={{color: '#1296db'}}>收藏</span>
             </div> :
-            <div>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.MYFAVORITE,[0,1,0,0])}>
               <i>
                 <img src="/images/icon/favorite.png" alt=""/>
               </i>

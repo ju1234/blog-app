@@ -28,6 +28,8 @@ import Profile from '../components/Profile/Profile.jsx'
 import View from '../components/View/View.jsx'
 /*我的文章页*/
 import MyArticle from '../components/MyArticle/MyArticle.jsx'
+/*我的收藏页*/
+import MyFavorite from '../components/MyFavorite/MyFavorite.jsx'
 
 
 const routes = (
@@ -37,7 +39,8 @@ const routes = (
         <Route path="/index" component={HomePage}/>
         <Route path="/login" component={Login}/>
         <Route path="/reg" component={Reg}/>
-        <Route path='/view/:id' components={View}/>
+        <Route path='/view/:id' component={View}/>
+        <Route path='/myFavorite' component={MyFavorite}/>
         <Route path='/personal'>
           <IndexRoute component={Personal}/>
           <Route path='profile' component={Profile}/>

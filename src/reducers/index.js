@@ -12,7 +12,8 @@ import headerReducer from './headerReducer.js';
 import footerReducer from './footerReducer.js';
 import homePageArticleReducer from './homePageArticleReducer.js';
 import viewReducer from './viewReducer.js';
-import myArticleReducer from './myArticleReducer.js'
+import myArticleReducer from './myArticleReducer.js';
+import myFavoriteReducer from './myFavoriteReducer.js';
 
 
 const reducers = combineReducers({
@@ -22,7 +23,8 @@ const reducers = combineReducers({
   footer: footerReducer,
   homePage: homePageArticleReducer,
   view: viewReducer,
-  myArticle: myArticleReducer
+  myArticle: myArticleReducer,
+  myFavorite: myFavoriteReducer
 });
 
 export default reducers;

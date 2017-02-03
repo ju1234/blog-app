@@ -37,3 +37,6 @@ export const DELETE_ARTICLE = '/api/delAtc';
 
 //修改我的收藏
 export const CHANGE_MY_FAVORITE = '/api/changeMyFavorite';
+
+// 获取我的收藏 数据
+export const GET_MYFAVORITE_ARTICLE = '/api/getMyFavorite';

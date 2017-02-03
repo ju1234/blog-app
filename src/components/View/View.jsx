@@ -87,7 +87,7 @@ class View extends Component {
               <div>
                 <h4>{this.props.article.title}</h4>
                 <i onClick={this.favoriteClick.bind(this)}>
-                  <img src={`\/images\/icon\/${favoriteImgSrc}`} alt=""/> :
+                  <img src={`\/images\/icon\/${favoriteImgSrc}`} alt=""/>
                 </i>
               </div>
               <div>
