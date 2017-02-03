@@ -12,6 +12,7 @@ import * as actionType from '../utils/actionTypes'
 const init = {
   back: false,
   btn: true,
+  title: '首页'
 };
 
 
@@ -30,6 +31,10 @@ export default function headerReducer(state = Immutable.fromJS(init), action) {
     case actionType.SHOW_HEADER_BACKBTN:
       return state.update('back', () => true);
 
+    case actionType.CHANGE_TITLE:
+      return state.update('title',() => {
+        return action.payload
+      });
 
     default:
       return state;

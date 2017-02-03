@@ -7,15 +7,25 @@
 
 import * as paths from './paths'
 
-
 //----------刷新获取信息
-export function getPathInfo(href) {
-  switch (pathProcessor(href)){
-
-    default:
-      return null;
-
+export function getPathTitle(path) {
+  switch (path){
+    case paths.INDEX:
+      return '首页';
+    case paths.MYFAVORITE:
+      return '我的收藏';
+    case paths.LOGIN:
+      return '登录';
+    case paths.MYARTICLE:
+      return '我的文章';
+    case paths.PERSONAL:
+      return '个人主页';
+    case paths.REG:
+      return '注册';
+    case paths.PROFILE:
+      return '个人资料';
   }
+
 }
 
 

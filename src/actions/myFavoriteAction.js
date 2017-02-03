@@ -29,3 +29,12 @@ export function getMyFavoriteArticle(userInfo) {
       })
   }
 }
+// 修改title
+export function actionChangeTitle(title) {
+  return (dispatch) => {
+    dispatch({
+      type: actionType.CHANGE_TITLE,
+      payload: title
+    })
+  }
+}

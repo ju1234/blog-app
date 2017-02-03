@@ -28,7 +28,7 @@ class Layout extends Component {
   }
 
   componentDidMount() {
-
+    console.log(1)
   }
 
   render() {

@@ -7,7 +7,7 @@
 
 import * as actionType from '../utils/actionTypes'
 
-import {pathProcessor} from '../utils/pathInfo.js'
+import {pathProcessor,getPathTitle} from '../utils/pathInfo.js'
 
 import * as paths from '../utils/paths'
 
@@ -37,6 +37,15 @@ export function actionInit() {
         type: actionType.HEADER_BTN_SHOW
       })
     }
+  }
+}
+
+export function actionChangeTitle(path) {
+  return (dispatch) => {
+    dispatch({
+      type: actionType.CHANGE_TITLE,
+      payload: getPathTitle(path)
+    })
   }
 }
 

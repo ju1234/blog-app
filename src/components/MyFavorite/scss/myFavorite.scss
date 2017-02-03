@@ -1,7 +1,32 @@
+@import "../../style/base";
+
 .myFavoriteContainer{
+  width: 100%;
+  height: 100%;
+  background: #ccc;;
+
+}
+
+.hasNoFavorite{
+  @extend .display_flex;
+  @extend .justifyContent_center;
+  @extend .alignItems_center;
+
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 50px;
+  em{
+    color: #ccc;
+    font-size: 2em;
+  }
+}
+
+.hisFavorite{
   background: #ccc;
   padding-top: 10px;
   padding-bottom: 60px;
+
   >div{
     margin-bottom: 10px;
   }

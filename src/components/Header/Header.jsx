@@ -8,12 +8,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
+//=============================================================================
 
+//==============================================================================
 
 import headerStyle from './sass/header.scss'
 import * as paths from '../../utils/paths.js'
 
-import {actionShowAlertModel, actionInit} from '../../actions/headerAction.js'
+import {actionShowAlertModel, actionInit,actionChangeTitle} from '../../actions/headerAction.js'
 import {actionSetFooterActive} from '../../actions/commonAction.js'
 
 import {pathProcessor} from '../../utils/pathInfo'
@@ -27,7 +29,8 @@ class Header extends Component {
       Object.assign({}, {
         actionShowAlertModel,
         actionInit,
-        actionSetFooterActive
+        actionSetFooterActive,
+        actionChangeTitle
       }), props.dispatch);
     this.alertToggle = false;
   }
@@ -39,6 +42,12 @@ class Header extends Component {
       this.actions.actionSetFooterActive([1,0,0,0])
     }
     this.actions.actionInit();
+
+    // 监听路径变化
+    this.context.router.listen((event)=>{
+      this.actions.actionChangeTitle(event.pathname);
+      console.log(event.pathname)
+    })
   }
 
   static contextTypes = {
@@ -47,7 +56,7 @@ class Header extends Component {
 
 
   render() {
-    let {login, header} = this.props;
+    let {login, header,title} = this.props;
     login = login.toJS();
     header = header.toJS();
     return (
@@ -61,7 +70,7 @@ class Header extends Component {
               null
           }
         </div>
-        <h1>{login.userInfo.name}</h1>
+        <h1>{header.title}</h1>
         <div>
           {
             header.btn ?

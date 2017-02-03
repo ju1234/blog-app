@@ -12,6 +12,7 @@ import {bindActionCreators} from 'redux';
 import ArticleList from '../../common/ArticleList/ArticleList.jsx';
 import {getMyArticle,deleteArticle} from '../../actions/myArticleAction.js';
 import {goToView} from '../../actions/commonAction.js';
+import {actionChangeTitle} from '../../actions/myFavoriteAction.js'
 //====================================================
 import myArticleStyle from './scss/myArticle.scss';
 import * as api from '../../utils/api.js';
@@ -24,7 +25,8 @@ class MyArticle extends Component {
     this.actions = bindActionCreators(Object.assign({}, {
       getMyArticle,
       goToView,
-      deleteArticle
+      deleteArticle,
+      actionChangeTitle
     }), props.dispatch);
   }
 
@@ -45,6 +47,7 @@ class MyArticle extends Component {
 
   clickHandle(articleInfo) {
     this.actions.goToView(this.context.router, articleInfo);
+    this.actions.actionChangeTitle(articleInfo.title)
   }
 
   render() {
