@@ -58,7 +58,7 @@ class Bar extends Component {
               <div  onClick={this.clickHandle.bind(this)}>{
                 this.state.isEdit ?
                 '完成' :
-                <img src="/images/personal/edit.png" alt="编辑" />
+                <img src="/images/personal/edit.png" alt="编辑" title="编辑"/>
               }</div> :
               null
           }

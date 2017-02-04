@@ -67,7 +67,7 @@ class Header extends Component {
         }}>
           {
             header.back ?
-              <img src="/images/icon/back.png" alt="back"/> :
+              <img src="/images/icon/back.png" alt="back" title="返回"/> :
               null
           }
         </div>

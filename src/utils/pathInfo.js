@@ -24,6 +24,8 @@ export function getPathTitle(path) {
       return '注册';
     case paths.PROFILE:
       return '个人资料';
+    case paths.WRITE:
+      return '新建文章';
   }
 
 }

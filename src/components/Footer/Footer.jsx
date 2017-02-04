@@ -41,13 +41,13 @@ class Footer extends Component {
           active[0] ?
             <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.INDEX,[1,0,0,0])}>
               <i>
-                <img src="/images/iconActive/index.png" alt=""/>
+                <img src="/images/iconActive/index.png" alt="首页" title="首页"/>
               </i>
               <span style={{color: '#1296db'}}>首页</span>
             </div> :
             <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.INDEX,[1,0,0,0])}>
               <i>
-                <img src="/images/icon/index.png" alt=""/>
+                <img src="/images/icon/index.png" alt="首页" title="首页"/>
               </i>
               <span>首页</span>
             </div>
@@ -56,13 +56,13 @@ class Footer extends Component {
           active[1] ?
             <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.MYFAVORITE,[0,1,0,0])}>
               <i>
-                <img src="/images/iconActive/favorite.png" alt=""/>
+                <img src="/images/iconActive/favorite.png" alt="收藏" title="收藏"/>
               </i>
               <span style={{color: '#1296db'}}>收藏</span>
             </div> :
             <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.MYFAVORITE,[0,1,0,0])}>
               <i>
-                <img src="/images/icon/favorite.png" alt=""/>
+                <img src="/images/icon/favorite.png" alt="收藏" title="收藏"/>
               </i>
               <span>收藏</span>
             </div>
@@ -71,13 +71,13 @@ class Footer extends Component {
           active[2] ?
             <div>
               <i>
-                <img src="/images/iconActive/search.png" alt=""/>
+                <img src="/images/iconActive/search.png" alt="搜索" title="搜索"/>
               </i>
               <span style={{color: '#1296db'}}>搜索</span>
             </div> :
             <div>
               <i>
-                <img src="/images/icon/search.png" alt=""/>
+                <img src="/images/icon/search.png" alt="搜索" title="搜索"/>
               </i>
               <span>搜索</span>
             </div>
@@ -86,13 +86,13 @@ class Footer extends Component {
           active[3] ?
             <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.PERSONAL,[0,0,0,1])}>
               <i>
-                <img src="/images/iconActive/smile.png" alt=""/>
+                <img src="/images/iconActive/smile.png" alt="个人主页" title="个人主页"/>
               </i>
               <span style={{color: '#1296db'}}>我的</span>
             </div> :
             <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.PERSONAL,[0,0,0,1])}>
               <i>
-                <img src="/images/icon/smile.png" alt=""/>
+                <img src="/images/icon/smile.png" alt="个人主页" title="个人主页"/>
               </i>
               <span>我的</span>
             </div>

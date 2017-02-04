@@ -67,7 +67,7 @@ class Login extends Component {
         <form>
           <div>
             <i>
-              <img src="/images/login/account.png" alt="username"/>
+              <img src="/images/login/account.png" alt="username" title="用户名或手机号码"/>
             </i>
             <input type="text" ref="username"
                    placeholder="手机号或用户名"
@@ -79,7 +79,7 @@ class Login extends Component {
           <p ref="usernameMessage"></p>
           <div>
             <i>
-              <img src="/images/reg/password.png" alt="password"/>
+              <img src="/images/reg/password.png" alt="password" title="密码"/>
             </i>
             <input type="password" ref="password"
                    placeholder="请输入密码"

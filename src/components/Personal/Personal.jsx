@@ -35,20 +35,28 @@ class Personal extends Component {
         {
           this.props.logined ?
             <div>
-              <div onClick={() => {this.context.router.push(path.PROFILE)}}>
+              <div onClick={() => {
+                this.context.router.push(path.PROFILE)
+              }}>
                 <p>个人资料</p>
               </div>
-              <div onClick={() => {this.context.router.push(path.MYARTICLE)}}>
+              <div onClick={() => {
+                this.context.router.push(path.MYARTICLE)
+              }}>
                 <p>我的文章</p>
               </div>
-              <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,path.MYFAVORITE,[0,1,0,0])}>
+              <div
+                onClick={this.actions.actionGoToOther.bind(this, this.context.router, path.MYFAVORITE, [0, 1, 0, 0])}>
                 <p>我的收藏</p>
               </div>
-              <div>
+              <div onClick={() => {
+                this.context.router.push(path.WRITE)
+              }}>
                 <p>再来一篇</p>
               </div>
-            </div>:
-            <div className={personalStyle.isNotLogin} onClick={this.actions.actionGoToLoginPage.bind(this,this.context.router)}>
+            </div> :
+            <div className={personalStyle.isNotLogin}
+                 onClick={this.actions.actionGoToLoginPage.bind(this, this.context.router)}>
               <p>点击登录</p>
             </div>
         }

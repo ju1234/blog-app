@@ -32,3 +32,6 @@ export const MYARTICLE = '/personal/myArticle';
 
 //我的收藏页
 export const MYFAVORITE = '/myFavorite';
+
+// 新建文章
+export const WRITE = '/write';

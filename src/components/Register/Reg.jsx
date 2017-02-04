@@ -83,7 +83,7 @@ class Reg extends Component {
         <form>
           <div>
             <i>
-              <img src="/images/reg/err/account.png" alt="username"/>
+              <img src="/images/reg/err/account.png" alt="username" title="用户名"/>
             </i>
             <input type="text" ref="name"
                    placeholder="*请输入用户名"
@@ -103,7 +103,7 @@ class Reg extends Component {
           <p ref="nameMsg"></p>
           <div>
             <i>
-              <img src="/images/reg/err/password.png" alt="password"/>
+              <img src="/images/reg/err/password.png" alt="password" title="密码"/>
             </i>
             <input type="password" ref="password"
                    placeholder="*请输入密码"
@@ -124,7 +124,7 @@ class Reg extends Component {
           <p ref='passwordMsg'></p>
           <div>
             <i>
-              <img src="/images/reg/err/ntpassword.png" alt="ntpassword"/>
+              <img src="/images/reg/err/ntpassword.png" alt="ntpassword" title="确认密码"/>
             </i>
             <input type="password" ref="ntpassword"
                    placeholder="*请再次输入密码"
@@ -137,7 +137,7 @@ class Reg extends Component {
           <p ref="ntpasswordMsg"></p>
           <div>
             <i>
-              <img src="/images/reg/phone.png" alt="phone"/>
+              <img src="/images/reg/phone.png" alt="phone" title="手机号码"/>
             </i>
             <input type="text" ref="phone"
                    placeholder="请输入手机号码"
@@ -158,7 +158,7 @@ class Reg extends Component {
           <div>
             <div>
               <i>
-                <img src="/images/reg/sex.png" alt="sex"/>
+                <img src="/images/reg/sex.png" alt="sex" title="性别"/>
               </i>
               <select name="sex" ref="sex">
                 <option value="男">男</option>
@@ -167,7 +167,7 @@ class Reg extends Component {
             </div>
             <div>
               <i>
-                <img src="/images/reg/age.png" alt="age"/>
+                <img src="/images/reg/age.png" alt="age" title="年龄"/>
               </i>
               <select name="age" ref="age">
                 {
@@ -183,7 +183,7 @@ class Reg extends Component {
           <p></p>
           <div>
             <i>
-              <img src="/images/reg/map.png" alt="address"/>
+              <img src="/images/reg/map.png" alt="address" title="地址"/>
             </i>
             <input type="text" ref="address"
                    placeholder="居住地所在城市"
@@ -192,7 +192,7 @@ class Reg extends Component {
           <p></p>
           <div>
             <i>
-              <img src="/images/reg/email.png" alt="email"/>
+              <img src="/images/reg/email.png" alt="email" title="邮箱"/>
             </i>
             <input type="text" ref="email"
                    placeholder="请输入常有邮箱"

@@ -30,7 +30,8 @@ import View from '../components/View/View.jsx'
 import MyArticle from '../components/MyArticle/MyArticle.jsx'
 /*我的收藏页*/
 import MyFavorite from '../components/MyFavorite/MyFavorite.jsx'
-
+/*新建文章*/
+import Write from '../components/Write/Write.jsx'
 
 const routes = (
   <Provider store={store}>
@@ -41,6 +42,8 @@ const routes = (
         <Route path="/reg" component={Reg}/>
         <Route path='/view/:id' component={View}/>
         <Route path='/myFavorite' component={MyFavorite}/>
+        <Route path='/write' component={Write}/>
+
         <Route path='/personal'>
           <IndexRoute component={Personal}/>
           <Route path='profile' component={Profile}/>

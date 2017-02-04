@@ -1,8 +1,30 @@
-.myArticleContainer{
+@import "../../style/base";
+
+.myArticleWrap{
+  width: 100%;
+  height: 100%;
+}
+
+.myArticleContainer {
   background: #ccc;
   padding-top: 10px;
   padding-bottom: 60px;
-  >div{
+  > div {
     margin-bottom: 10px;
+  }
+}
+
+.hasNoArticle{
+  @extend .display_flex;
+  @extend .justifyContent_center;
+  @extend .alignItems_center;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  background: #fff;
+
+  em{
+    color: #cccccc;
+    font-size: 1.5em;
   }
 }

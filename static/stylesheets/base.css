@@ -100,7 +100,7 @@ label {
   transition: all 0.3s ease-out 0s;
 }
 
-input, textarea, button {
+input, textarea, button, pre, p {
   outline: 0
 }
 
@@ -110,4 +110,8 @@ button {
 
 * {
   box-sizing: border-box
+}
+
+.red{
+  color: #f00;
 }

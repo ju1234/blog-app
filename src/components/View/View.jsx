@@ -14,7 +14,8 @@ import {actionGoToLoginPage} from  '../../actions/commonAction.js';
 import {getViewArticle, setFavorite,changeMyFavorite} from '../../actions/viewAction.js';
 import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
 //==================================================
-import viewStyle from './scss/view.scss'
+import viewStyle from './scss/view.scss';
+import {noEscapeSequence} from '../../utils/viewUtils.js'
 
 class View extends Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class View extends Component {
   componentDidUpdate() {
     this.ifFavorite();
     this.actions.actionChangeTitle(this.props.article.title);
+    // this.refs.content.innerHTML = this.props.article.content;
   }
 
   favoriteClick() {
@@ -91,17 +93,17 @@ class View extends Component {
               <div>
                 <h4>{this.props.article.title}</h4>
                 <i onClick={this.favoriteClick.bind(this)}>
-                  <img src={`\/images\/icon\/${favoriteImgSrc}`} alt=""/>
+                  <img src={`\/images\/icon\/${favoriteImgSrc}`} alt="收藏" title="收藏"/>
                 </i>
               </div>
               <div>
                 <i>
-                  <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt=""/>
+                  <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
                 </i>
                 <span>{this.props.article.author + ' · '}</span>
                 <span>{moment(this.props.article.time).format('YYYY-MM-DD h:mm:ss')}</span>
               </div>
-              <div>{this.props.article.content}</div>
+              <article ref="content">{noEscapeSequence(this.props.article.content)}</article>
             </div> :
             <div>该文章消失在茫茫人海中。。。。。。对此我们表示抱歉。。如果不服，你来打我啊</div>
         }

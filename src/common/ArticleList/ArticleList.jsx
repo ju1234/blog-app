@@ -29,7 +29,7 @@ export default class ArticleList extends Component {
       <div className={articleListStyle.articleList}>
         <div>
           <i>
-            <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt=""/>
+            <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
           </i>
           <span>{this.props.articleInfo.title}</span>
           {deleteBtn}

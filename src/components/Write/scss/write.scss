@@ -1,0 +1,65 @@
+@import "../../style/base";
+
+.writeContainer {
+  @extend .display_flex;
+  @extend .flexDirection_column;
+
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  //padding-bottom: 60px;
+  //box-sizing: inherit;
+
+  > div {
+    &:first-child {
+      width: 100%;
+      height: 50px;
+
+      input {
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        text-indent: 2em;
+        font-size: 1.5em;
+        display: block;
+        border-bottom: 1px dotted #333;
+        margin-bottom: 10px;
+      }
+
+      + div {
+        flex: 1;
+        overflow: scroll;
+
+        p {
+          //display: block;
+          width: 100%;
+          max-width: 100%;
+          min-height: 100%;
+          padding: 8px;
+          font-size: 1em;
+          text-indent: 2em;
+          word-break: break-all;
+          overflow-y: visible;
+        }
+      }
+    }
+
+    &:last-child{
+      padding: 8px;
+
+      button {
+        display: block;
+        width: 80%;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        font-size: 1.3em;
+        background: #1296db;
+        color: #fff;
+        border-radius: 8px;
+        margin: 0 auto;
+      }
+    };
+  }
+}
+
