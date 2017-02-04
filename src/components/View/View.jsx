@@ -56,13 +56,13 @@ class View extends Component {
       this.actions.getViewArticle(location.href.split('id=')[1])
     }
     this.ifFavorite();
-
+    this.refs.content.innerHTML = noEscapeSequence(this.props.article.content);
   }
 
   componentDidUpdate() {
     this.ifFavorite();
     this.actions.actionChangeTitle(this.props.article.title);
-    // this.refs.content.innerHTML = this.props.article.content;
+    this.refs.content.innerHTML = noEscapeSequence(this.props.article.content);
   }
 
   favoriteClick() {
@@ -103,7 +103,7 @@ class View extends Component {
                 <span>{this.props.article.author + ' · '}</span>
                 <span>{moment(this.props.article.time).format('YYYY-MM-DD h:mm:ss')}</span>
               </div>
-              <article ref="content">{noEscapeSequence(this.props.article.content)}</article>
+              <article ref="content">{}</article>
             </div> :
             <div>该文章消失在茫茫人海中。。。。。。对此我们表示抱歉。。如果不服，你来打我啊</div>
         }

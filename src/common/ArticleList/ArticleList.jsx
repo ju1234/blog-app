@@ -10,11 +10,15 @@ import React, {Component} from 'react';
 import moment from 'moment';
 //-------------------------------------------------
 import articleListStyle from './scss/articleList.scss'
-
+import {noEscapeSequence} from '../../utils/viewUtils.js'
 
 export default class ArticleList extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount(){
+    this.refs.overview.innerHTML = noEscapeSequence(this.props.articleInfo.content.substring(0, 40)) + '...'
   }
 
   render() {
@@ -36,7 +40,7 @@ export default class ArticleList extends Component {
         </div>
         <div onClick={this.props.clickHandle.bind(this, this.props.articleInfo)}>
           <span>{this.props.articleInfo.author + "："}</span>
-          {this.props.articleInfo.content.substring(0, 40) + '...'}
+          <span ref="overview"></span>
         </div>
         <div>
           <span>{moment(this.props.articleInfo.time).format('YYYY-MM-DD h:mm:ss')}</span>
