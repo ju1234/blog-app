@@ -49,7 +49,7 @@ class Write extends Component{
 
   submitHandle(){
     const title = this.refs.title.value.trim();
-    const content = this.refs.content.innerText.trim();
+    const content = this.refs.content.innerHTML.trim();
     if(title === ''){
       alert('标题不得为空');
       this.refs.title.focus();
