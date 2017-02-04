@@ -9,14 +9,13 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 //=============================================================================
-
+import {actionShowAlertModel, actionInit,actionChangeTitle} from '../../actions/headerAction.js'
+import {actionSetFooterActive} from '../../actions/commonAction.js'
 //==============================================================================
 
 import headerStyle from './sass/header.scss'
 import * as paths from '../../utils/paths.js'
 
-import {actionShowAlertModel, actionInit,actionChangeTitle} from '../../actions/headerAction.js'
-import {actionSetFooterActive} from '../../actions/commonAction.js'
 
 import {pathProcessor} from '../../utils/pathInfo'
 
@@ -43,6 +42,8 @@ class Header extends Component {
     }
     this.actions.actionInit();
 
+    // 刷新设置title
+    this.actions.actionChangeTitle(pathProcessor(location.href));
     // 监听路径变化
     this.context.router.listen((event)=>{
       this.actions.actionChangeTitle(event.pathname);
