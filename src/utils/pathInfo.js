@@ -26,6 +26,8 @@ export function getPathTitle(path) {
       return '个人资料';
     case paths.WRITE:
       return '新建文章';
+    case paths.SEARCH:
+      return '搜索';
   }
 
 }

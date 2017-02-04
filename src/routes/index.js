@@ -19,19 +19,21 @@ import HomePage from '../components/HomePage/HomePage.jsx';
 /*登录组件*/
 import Login from '../components/Login/Login.jsx';
 /*注册组件*/
-import Reg from '../components/Register/Reg.jsx'
+import Reg from '../components/Register/Reg.jsx';
 /*个人主页组件*/
-import Personal from '../components/Personal/Personal.jsx'
+import Personal from '../components/Personal/Personal.jsx';
 /*用户资料组件*/
-import Profile from '../components/Profile/Profile.jsx'
+import Profile from '../components/Profile/Profile.jsx';
 /*文章查看页*/
-import View from '../components/View/View.jsx'
+import View from '../components/View/View.jsx';
 /*我的文章页*/
-import MyArticle from '../components/MyArticle/MyArticle.jsx'
+import MyArticle from '../components/MyArticle/MyArticle.jsx';
 /*我的收藏页*/
-import MyFavorite from '../components/MyFavorite/MyFavorite.jsx'
+import MyFavorite from '../components/MyFavorite/MyFavorite.jsx';
 /*新建文章*/
-import Write from '../components/Write/Write.jsx'
+import Write from '../components/Write/Write.jsx';
+/*搜索*/
+import Search from '../components/Search/Search.jsx';
 
 const routes = (
   <Provider store={store}>
@@ -43,7 +45,7 @@ const routes = (
         <Route path='/view/:id' component={View}/>
         <Route path='/myFavorite' component={MyFavorite}/>
         <Route path='/write' component={Write}/>
-
+        <Route path='/search' component={Search}/>
         <Route path='/personal'>
           <IndexRoute component={Personal}/>
           <Route path='profile' component={Profile}/>

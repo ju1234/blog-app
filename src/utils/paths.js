@@ -35,3 +35,6 @@ export const MYFAVORITE = '/myFavorite';
 
 // 新建文章
 export const WRITE = '/write';
+
+//搜素页
+export const SEARCH = '/search';

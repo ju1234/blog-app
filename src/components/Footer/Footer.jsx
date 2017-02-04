@@ -69,13 +69,13 @@ class Footer extends Component {
         }
         {
           active[2] ?
-            <div>
+            <div onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.SEARCH,[0,0,1,0])}>
               <i>
                 <img src="/images/iconActive/search.png" alt="搜索" title="搜索"/>
               </i>
               <span style={{color: '#1296db'}}>搜索</span>
             </div> :
-            <div>
+            <div  onClick={this.actions.actionGoToOther.bind(this,this.context.router,paths.SEARCH,[0,0,1,0])}>
               <i>
                 <img src="/images/icon/search.png" alt="搜索" title="搜索"/>
               </i>
