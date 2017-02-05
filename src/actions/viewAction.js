@@ -28,7 +28,6 @@ export function getViewArticle(id) {
 export function setFavorite(msg) {
   return (dispatch) => {
     if (msg) {
-      console.log('asd');
       dispatch({
         type: actionType.SET_FAVORITE,
         payload: true
@@ -45,7 +44,6 @@ export function setFavorite(msg) {
 // 修改我的收藏
 export function changeMyFavorite(id,author_id,msg) {
   return (dispatch) => {
-    console.log('id',id,"::msg",msg);
     const data = {
       id: id,
       author_id: author_id,

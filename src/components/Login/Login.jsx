@@ -48,7 +48,6 @@ class Login extends Component {
       username: username,
       password: password
     };
-    console.log(this.props.history)
     this.actions.actionLogin(data,msg,this.context.router,this.props.history)
   }
 

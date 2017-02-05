@@ -48,9 +48,8 @@ export function actionGoToView(id,router) {
       .then((data) => {
         dispatch({
           type: actionTypes.SET_VIEW_ARTICLE,
-          payload: data.data
+          payload: JSON.parse(data.data)[0]
         });
-        console.log(router)
         router.push(paths.VIEW +'/id='+ id);
       })
   }

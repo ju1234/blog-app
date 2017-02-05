@@ -21,7 +21,6 @@ export function getMyFavoriteArticle(userInfo) {
       favorite: favorite
     })
       .then((res) => {
-        console.log(JSON.parse(res.data));
         dispatch({
           type: actionType.MYFAVORITE_ARTICLE,
           payload: JSON.parse(res.data)

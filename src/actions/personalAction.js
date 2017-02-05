@@ -11,7 +11,6 @@ import {apiPost} from '../api/API.js'
 
 // 修改用户资料
 export function actionAlterUserInfo(id,value,type) {
-  console.log(id,value,type)
   return (dispatch) => {
     apiPost(api.ALTER_USER_INFO,{id: id,value: value,type: type})
       .then((msg) => {

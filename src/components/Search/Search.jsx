@@ -32,9 +32,12 @@ class Search extends Component {
     router: React.PropTypes.object.isRequired
   };
 
+  componentDidMount(){
+    this.actions.actionInitSearch();
+  }
+
   changeHandle(e) {
     this.reqCount = 1;
-    console.log(e.target.value);
     if (e.target.value !== '') {
       this.actions.actionSearch(e.target.value, this.reqCount);
     } else {
@@ -51,7 +54,6 @@ class Search extends Component {
   }
 
   render() {
-    console.log('router',this.context.router)
     const users = this.props.search.userList;
     const articleList = this.props.search.articleList;
 

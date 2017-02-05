@@ -47,7 +47,6 @@ class Header extends Component {
     // 监听路径变化
     this.context.router.listen((event)=>{
       this.actions.actionChangeTitle(event.pathname);
-      console.log(event.pathname)
     })
   }
 
@@ -63,7 +62,6 @@ class Header extends Component {
     return (
       <div className={headerStyle.headerContainer}>
         <div onClick={() => {
-          console.log(1)
         }}>
           {
             header.back ?

@@ -15,7 +15,6 @@ const init = {
 export default function searchReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
     case actionTypes.SET_SEARCH_DATA_AGIAN:
-      console.log(action.payload);
       return state.update('userList',(oldValue) => {
         return oldValue.concat(action.payload.userList)
       }).update('articleList',(oldValue) => {
