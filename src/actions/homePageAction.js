@@ -25,3 +25,24 @@ export function getArticle() {
   }
 }
 
+export function goToOtherPage(articleInfo,router) {
+  return (dispatch) => {
+    articleInfo.author = articleInfo.author.replace('<span class="cue">','');
+    articleInfo.author = articleInfo.author.replace('</span>','');
+    apiPost(api.GET_MYARTICLE,{id: articleInfo.author_id})
+      .then((data) => {
+        dispatch({
+          type: actionType.SET_OTHER,
+          payload: {
+            userInfo: {
+              name: articleInfo.author,
+              id: articleInfo.author_id
+            },
+            articleList: JSON.parse(data.data)
+          }
+        });
+        router.push(path.OTHER + '/id=' + articleInfo.author_id);
+      })
+  }
+}
+

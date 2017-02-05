@@ -46,3 +46,6 @@ export const SAVE_ARTICLE = '/api/saveArticle';
 
 // 搜索
 export const SEARCH = '/api/search';
+
+//获取其他用户信息
+export const GET_OTHER = '/api/getOther';

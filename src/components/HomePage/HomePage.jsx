@@ -9,8 +9,8 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 //==========================================================
-import {getArticle} from '../../actions/homePageAction.js';
-import {actionChangeTitle} from '../../actions/myFavoriteAction.js'
+import {getArticle,goToOtherPage} from '../../actions/homePageAction.js';
+import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
 import {goToView,changeHistoy} from '../../actions/commonAction.js';
 //==========================================================
 import ArticleList from '../../common/ArticleList/ArticleList.jsx';
@@ -27,7 +27,8 @@ class HomePage extends Component{
       getArticle,
       goToView,
       changeHistoy,
-      actionChangeTitle
+      actionChangeTitle,
+      goToOtherPage
     },{}),props.dispatch)
   }
 
@@ -39,6 +40,11 @@ class HomePage extends Component{
     if(this.props.articleList.length === 0){
       this.actions.getArticle()
     }
+  }
+
+  goToOtherPage(articleInfo){
+    console.log(articleInfo)
+    this.actions.goToOtherPage(articleInfo,this.context.router)
   }
 
   clickHandle(articleInfo){
@@ -53,7 +59,12 @@ class HomePage extends Component{
       <div className={homepageStyle.homepageContainer}>
         {
           this.props.articleList.map((item,index) => {
-            return <ArticleList key={index} articleInfo={item} clickHandle={this.clickHandle.bind(this)}/>
+            return <ArticleList
+              key={index}
+              articleInfo={item}
+              clickHandle={this.clickHandle.bind(this)}
+              goToOtherPage={this.goToOtherPage.bind(this)}
+            />
           })
         }
       </div>

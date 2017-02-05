@@ -14,6 +14,7 @@ import ArticleList from '../Search/ArticleList/ArticleList.jsx'
 //===============================================
 import {actionGoToView} from '../../actions/searchAction.js';
 import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
+import {actionGetOtherData} from '../../actions/otherAction.js'
 //===============================================
 import otherStyle from './scss/other.scss'
 
@@ -23,7 +24,8 @@ class Other extends Component{
     super(props);
     this.actions = bindActionCreators(Object.assign({},{
       actionGoToView,
-      actionChangeTitle
+      actionChangeTitle,
+      actionGetOtherData
     }),props.dispatch)
   }
 
@@ -31,12 +33,15 @@ class Other extends Component{
     this.actions.actionGoToView(article_id, router)
   }
 
+  componentDidMount(){
+    this.actions.actionGetOtherData(location.href.split('id=')[1])
+  }
+
   componentDidUpdate(){
     this.actions.actionChangeTitle(`${this.props.userInfo.name}的主页`)
   }
 
   render(){
-    console.log(this.props);
     return (
       <div className={otherStyle.otherContainer}>
         <div>

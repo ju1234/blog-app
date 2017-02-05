@@ -31,7 +31,12 @@ export default class ArticleList extends Component {
 
     return (
       <div className={articleListStyle.articleList}>
-        <div>
+        <div
+          onClick={() => {
+            if(typeof this.props.goToOtherPage === 'function'){
+              this.props.goToOtherPage(this.props.articleInfo)
+            }
+          }}>
           <i>
             <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
           </i>
