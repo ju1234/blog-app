@@ -38,3 +38,6 @@ export const WRITE = '/write';
 
 //搜素页
 export const SEARCH = '/search';
+
+//用户信息页
+export const OTHER = '/other';

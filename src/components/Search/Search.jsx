@@ -10,9 +10,9 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
 import UserList from './UserList/UserList.jsx'
-import SearchArticleList from './SearchArticleList/SearchArticleList.jsx'
+import ArticleList from './ArticleList/ArticleList.jsx'
 //================================================================
-import {actionSearch, actionInitSearch, actionGoToView} from '../../actions/searchAction.js'
+import {actionSearch, actionInitSearch, actionGoToView,actionGoToOhterPage} from '../../actions/searchAction.js';
 //================================================================
 import searchStyle from './scss/search.scss';
 
@@ -24,7 +24,8 @@ class Search extends Component {
     this.actions = bindActionCreators(Object.assign({}, {
       actionSearch,
       actionInitSearch,
-      actionGoToView
+      actionGoToView,
+      actionGoToOhterPage
     }), props.dispatch)
   }
 
@@ -45,8 +46,8 @@ class Search extends Component {
     }
   }
 
-  userClick(user_id, router = this.context.router) {
-
+  userClick(userInfo, router = this.context.router) {
+    this.actions.actionGoToOhterPage(userInfo, router);
   }
 
   articleClick(article_id, router = this.context.router) {
@@ -86,7 +87,7 @@ class Search extends Component {
             <div>
               {
                 articleList.map((article, index) => {
-                  return <SearchArticleList key={index}
+                  return <ArticleList key={index}
                                             article={article}
                                             clickHandle={this.articleClick.bind(this)}
                   />

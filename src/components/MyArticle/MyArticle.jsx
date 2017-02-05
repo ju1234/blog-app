@@ -16,8 +16,7 @@ import {actionChangeTitle} from '../../actions/myFavoriteAction.js'
 //====================================================
 import myArticleStyle from './scss/myArticle.scss';
 import * as paths from '../../utils/paths.js';
-// import * as api from '../../utils/api.js';
-// import {apiPost} from '../../api/API.js';
+
 
 
 class MyArticle extends Component {

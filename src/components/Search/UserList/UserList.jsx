@@ -26,7 +26,7 @@ export default class UserList extends Component{
       <div className={userListStyle.userListContainer}
         onClick={this.props.clickHandle.bind(
           this,
-          this.props.userInfo.id,
+          this.props.userInfo,
           this.context.router
         )}
       >

@@ -66,3 +66,6 @@ export const SET_SEARCH_DATA_AGIAN = 'SET_SEARCH_DATA_AGIAN';
 
 // 初始化搜索
 export const SEARCH_INIT = 'SEARCH_INIT';
+
+//设置其他用户信息
+export const SET_OTHER = 'SET_OTHER';

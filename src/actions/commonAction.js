@@ -12,21 +12,21 @@ import * as api from '../utils/api.js'
 import {apiPost} from '../api/API.js'
 
 // 登录
-export function actionLogin(data,msg,router,path) {
+export function actionLogin(data, msg, router, path) {
   return (dispatch) => {
-    apiPost(api.VERIFY_PASSWORD,data)
+    apiPost(api.VERIFY_PASSWORD, data)
       .then((res) => {
-        if(res.msg === false){
+        if (res.msg === false) {
           msg.passwordMessage.innerHTML = '密码错误';
-        }else if(res.msg === undefined){
+        } else if (res.msg === undefined) {
           msg.usernameMessage.innerHTML = '该用户不存在';
-        }else if(res.msg === true){
+        } else if (res.msg === true) {
           // 跳转上一页
           router.push(path);
           // 设置footer  active
           dispatch({
             type: actionType.SET_FOOTER_ACTIVE,
-            payload: [1,0,0,0]
+            payload: [1, 0, 0, 0]
           });
           // 设置头部 +号 按钮
           dispatch({
@@ -59,7 +59,7 @@ export function actionGoToLoginPage(router) {
     // 设置footer active
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
-      payload: [0,0,0,0]
+      payload: [0, 0, 0, 0]
     });
     // // 头部回退按钮显示
     // dispatch({
@@ -69,14 +69,14 @@ export function actionGoToLoginPage(router) {
 }
 
 //注销
-export function actionLogout(router,path) {
+export function actionLogout(router, path) {
   return (dispatch) => {
     // 跳转上一页
     router.push(path);
     // 设置footer  active
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
-      payload: [1,0,0,0]
+      payload: [1, 0, 0, 0]
     });
     // 设置头部 +号 按钮
     dispatch({
@@ -106,7 +106,7 @@ export function actionGoToRegPage(router) {
     // 设置footer active
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
-      payload: [0,0,0,0]
+      payload: [0, 0, 0, 0]
     })
   }
 }
@@ -133,8 +133,8 @@ export function actionSetFooterActive(payload) {
 
 
 // 跳转view页面
-export function goToView(router,payload) {
-  router.push(paths.VIEW +'/id='+ payload.id);
+export function goToView(router, payload) {
+  router.push(paths.VIEW + '/id=' + payload.id);
   return (dispatch) => {
     dispatch({
       type: actionType.SET_VIEW_ARTICLE,
@@ -144,7 +144,7 @@ export function goToView(router,payload) {
 }
 
 // 修改历史路径
-export function changeHistoy(path){
+export function changeHistoy(path) {
   return (dispatch) => {
     dispatch({
       type: actionType.CHANGE_HISTORY,
@@ -152,6 +152,5 @@ export function changeHistoy(path){
     })
   }
 }
-
 
 

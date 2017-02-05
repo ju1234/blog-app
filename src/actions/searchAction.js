@@ -54,3 +54,24 @@ export function actionGoToView(id,router) {
       })
   }
 }
+
+
+//跳转他人主页
+export function actionGoToOhterPage(userInfo, router) {
+  return (dispatch) => {
+    userInfo.name = userInfo.name.replace('<span class="cue">','');
+    userInfo.name = userInfo.name.replace('</span>','');
+    apiPost(api.GET_MYARTICLE,{id: userInfo.id})
+      .then((data) => {
+        dispatch({
+          type: actionTypes.SET_OTHER,
+          payload: {
+            userInfo: userInfo,
+            articleList: JSON.parse(data.data)
+          }
+        });
+        router.push(paths.OTHER + '/id=' + userInfo.id);
+      })
+  }
+}
+

@@ -11,11 +11,11 @@ import searchArticleList from './scss/searchArticleList.scss'
 
 
 
-export default class SearchArticleList extends Component{
+export default class ArticleList extends Component{
 
   componentDidMount(){
     this.refs.title.innerHTML = this.props.article.title;
-    this.refs.content.innerHTML = this.props.article.content.substring(0,80) +'......';
+    this.refs.content.innerHTML = this.props.article.content.substring(0,40) +'......';
   }
 
   static contextTypes = {

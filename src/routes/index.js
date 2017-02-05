@@ -9,7 +9,6 @@ import React from 'react'
 import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 import {Provider} from 'react-redux'
 //=======================================================================
-
 import store from '../store/store';
 //=======================================================================
 /*布局组件*/
@@ -34,6 +33,8 @@ import MyFavorite from '../components/MyFavorite/MyFavorite.jsx';
 import Write from '../components/Write/Write.jsx';
 /*搜索*/
 import Search from '../components/Search/Search.jsx';
+/*其他用户信息页*/
+import Other from '../components/Other/Other.jsx';
 
 const routes = (
   <Provider store={store}>
@@ -46,6 +47,7 @@ const routes = (
         <Route path='/myFavorite' component={MyFavorite}/>
         <Route path='/write' component={Write}/>
         <Route path='/search' component={Search}/>
+        <Route path='/other/:id' component={Other}/>
         <Route path='/personal'>
           <IndexRoute component={Personal}/>
           <Route path='profile' component={Profile}/>

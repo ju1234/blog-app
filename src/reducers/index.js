@@ -24,6 +24,8 @@ import myArticleReducer from './myArticleReducer.js';
 import myFavoriteReducer from './myFavoriteReducer.js';
 // 搜索
 import searchReducer from './searchReducer.js';
+// 他人信息页
+import otherReducer from './otherReducer.js';
 
 const reducers = combineReducers({
   login: loginReducer,
@@ -34,7 +36,8 @@ const reducers = combineReducers({
   view: viewReducer,
   myArticle: myArticleReducer,
   myFavorite: myFavoriteReducer,
-  search: searchReducer
+  search: searchReducer,
+  other: otherReducer
 });
 
 export default reducers;

@@ -28,6 +28,8 @@ export function getPathTitle(path) {
       return '新建文章';
     case paths.SEARCH:
       return '搜索';
+    case paths.OTHER:
+      return '用户信息';
   }
 
 }
