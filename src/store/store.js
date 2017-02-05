@@ -5,8 +5,7 @@
  * 时间： 2017/1/9.
  */
 import {createStore,applyMiddleware} from 'redux';
-import {browserHistory} from 'react-router'
-import {routerMiddleware} from 'react-router-redux'
+
 
 
 import reducers from '../reducers';
