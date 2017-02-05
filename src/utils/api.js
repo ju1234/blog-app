@@ -43,3 +43,6 @@ export const GET_MYFAVORITE_ARTICLE = '/api/getMyFavorite';
 
 //存储文章
 export const SAVE_ARTICLE = '/api/saveArticle';
+
+// 搜索
+export const SEARCH = '/api/search';

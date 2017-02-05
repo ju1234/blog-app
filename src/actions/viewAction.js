@@ -27,7 +27,6 @@ export function getViewArticle(id) {
 // 设置文章收藏icon 显示
 export function setFavorite(msg) {
   return (dispatch) => {
-    console.log(msg)
     if (msg) {
       console.log('asd');
       dispatch({

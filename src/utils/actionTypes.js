@@ -58,3 +58,11 @@ export const SET_FAVORITE = 'SET_FAVORITE';
 // 设置我的收藏数据
 export const MYFAVORITE_ARTICLE = 'MYFAVORITE_ARTICLE';
 
+//设置搜索数据
+export const SET_SEARCH_DATA = 'SET_SEARCH_DATA';
+
+//补充搜索数据
+export const SET_SEARCH_DATA_AGIAN = 'SET_SEARCH_DATA_AGIAN';
+
+// 初始化搜索
+export const SEARCH_INIT = 'SEARCH_INIT';

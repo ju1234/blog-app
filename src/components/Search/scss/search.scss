@@ -1,0 +1,58 @@
+@import "../../style/base";
+.searchContainer{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 0 8px;
+  padding-bottom: 60px;
+
+  >div{
+    &:first-child{
+      @extend .display_flex;
+      @extend .justifyContent_spaceBetween;
+      width: 100%;
+      height: 50px;
+      padding: 8px 0;
+      background: #fff;
+
+      input{
+        width: 80%;
+        height: 100%;
+        background: #ddd;
+        padding-left: 10px;
+        border-radius: 5px;
+      }
+
+      button{
+        width: 18%;
+        height: 100%;
+        color: #fff;
+        font-size: 0.9em;
+        border-radius: 5px;
+        background: #1296db;
+      }
+
+      +div{
+        >div{
+          margin-bottom: 10px;
+          h6{
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.2em;
+            background: powderblue;
+            border-radius: 5px;
+            color: #999;
+            padding-left: 8px;
+            margin-bottom: 5px;
+          }
+
+          &:last-child{
+            >div{
+              margin-bottom: 60px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

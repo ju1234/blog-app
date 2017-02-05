@@ -1,0 +1,13 @@
+.searchArticleListContainer{
+  padding: 5px 0;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #cccccc;
+
+  p{
+    &:first-child{
+      padding-left: 8px;
+      font-size: 1em;
+      font-weight: 600;
+    }
+  }
+}
