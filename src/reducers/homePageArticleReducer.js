@@ -6,9 +6,8 @@
  */
 
 
-import Immutable from 'immutable'
-import * as actionType from '../utils/actionTypes.js'
-
+import Immutable from 'immutable';
+import * as actionType from '../utils/actionTypes.js';
 
 const init = {
  articleList : []
@@ -17,8 +16,23 @@ const init = {
 export default function homePageArticleReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
     case actionType.SET_HOMEPAGE_ARTICLE:
-      return state.update('articleList',() => action.payload);
+      return state.update('articleList',(oldValue) => {
+        return mergeUniq(oldValue, action.payload);
+      });
     default:
       return state;
   }
+}
+
+
+
+function mergeUniq(old, newData) {
+  for (let i = 0; i < newData.length; i++) {
+    for (let j = 0; j < old.length; j++) {
+      if (old[j].id === newData[i].id) {
+        newData.splice(i, 1);
+      }
+    }
+  }
+  return old.concat(newData);
 }

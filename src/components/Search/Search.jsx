@@ -12,7 +12,7 @@ import {bindActionCreators} from 'redux';
 import UserList from './UserList/UserList.jsx'
 import ArticleList from './ArticleList/ArticleList.jsx'
 //================================================================
-import {actionSearch, actionInitSearch, actionGoToView,actionGoToOhterPage} from '../../actions/searchAction.js';
+import {actionSearch, actionInitSearch, actionGoToView, actionGoToOhterPage} from '../../actions/searchAction.js';
 //================================================================
 import searchStyle from './scss/search.scss';
 
@@ -33,21 +33,34 @@ class Search extends Component {
     router: React.PropTypes.object.isRequired
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.actions.actionInitSearch();
-    const self = this;
+
+    addEventListener('scroll', this.searchScrollHandle.bind(this));
+  }
+
+  componentWillUnmount() {
+    removeEventListener('scroll', this.searchScrollHandle);
+  }
+
+
+  searchScrollHandle(e) {
+    // console.log(React)
     const searchContent = this.refs.searchContent;
-    addEventListener('scroll',function (e) {
-      let scrollTop = document.body.scrollTop;
+    let scrollTop = document.body.scrollTop;
+
+    if (searchContent !== undefined) {
       let height = searchContent.offsetHeight;
       let screenHeight = $(window).height();
-
-      if(scrollTop + screenHeight + 100 >= height){
-        self.reqCount ++ ;
-        self.actions.actionSearch(self.refs.searchInput.value, self.reqCount);
+      if (scrollTop + screenHeight + 100 >= height) {
+        this.reqCount++;
+        if (this.refs.searchInput.value !== '') {
+          this.actions.actionSearch(this.refs.searchInput.value, this.reqCount);
+        }
       }
-    })
+    }
   }
+
 
   changeHandle(e) {
     this.reqCount = 1;
@@ -100,8 +113,8 @@ class Search extends Component {
               {
                 articleList.map((article, index) => {
                   return <ArticleList key={index}
-                                            article={article}
-                                            clickHandle={this.articleClick.bind(this)}
+                                      article={article}
+                                      clickHandle={this.articleClick.bind(this)}
                   />
                 })
               }

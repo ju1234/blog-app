@@ -13,9 +13,9 @@ import * as api from '../utils/api.js'
 import * as path from '../utils/paths.js'
 
 // 获取文章数据
-export function getArticle() {
+export function getArticle(reqCount) {
   return (dispatch) => {
-    apiPost(api.GET_HOMEPAGE_ARTICLE)
+    apiPost(api.GET_HOMEPAGE_ARTICLE,{reqCount: reqCount})
       .then((res) => {
         dispatch({
           type: actionType.SET_HOMEPAGE_ARTICLE,
