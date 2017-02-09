@@ -12,14 +12,15 @@ const init = {
   articleList: []
 };
 
-export default function searchReducer(state = Immutable.fromJS(init),action) {
-  switch (action.type){
+export default function searchReducer(state = Immutable.fromJS(init), action) {
+  switch (action.type) {
     case actionTypes.SET_SEARCH_DATA_AGIAN:
-      return state.update('userList',(oldValue) => {
-        return oldValue.concat(action.payload.userList)
-      }).update('articleList',(oldValue) => {
-        return oldValue.concat(action.payload.articleList)
+      return state.update('userList', (oldValue) => {
+        return Immutable.fromJS(mergeUniq(oldValue.toJS(), action.payload.userList));
+      }).update('articleList', (oldValue) => {
+        return  Immutable.fromJS(mergeUniq(oldValue.toJS(), action.payload.articleList));
       });
+
 
     case actionTypes.SET_SEARCH_DATA:
       return Immutable.fromJS(action.payload);
@@ -31,3 +32,16 @@ export default function searchReducer(state = Immutable.fromJS(init),action) {
       return state;
   }
 }
+
+function mergeUniq(old, newData) {
+  for (let i = 0; i < newData.length; i++) {
+    for (let j = 0; j < old.length; j++) {
+      if (old[j].id === newData[i].id) {
+        newData.splice(i, 1);
+      }
+    }
+  }
+  return old.concat(newData);
+}
+
+

@@ -35,6 +35,18 @@ class Search extends Component {
 
   componentDidMount(){
     this.actions.actionInitSearch();
+    const self = this;
+    const searchContent = this.refs.searchContent;
+    addEventListener('scroll',function (e) {
+      let scrollTop = document.body.scrollTop;
+      let height = searchContent.offsetHeight;
+      let screenHeight = $(window).height();
+
+      if(scrollTop + screenHeight + 100 >= height){
+        self.reqCount ++ ;
+        self.actions.actionSearch(self.refs.searchInput.value, self.reqCount);
+      }
+    })
   }
 
   changeHandle(e) {
@@ -68,7 +80,7 @@ class Search extends Component {
           />
           <button type="button">搜索</button>
         </div>
-        <div>
+        <div ref='searchContent'>
           <div>
             <h6>用户：</h6>
             <div>

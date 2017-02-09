@@ -5,8 +5,8 @@
  * 时间： 2017/1/21
  */
 
-import * as api from '../utils/api.js'
-import {apiPost} from '../api/API.js'
+import * as api from '../utils/api.js';
+import {apiPost} from '../api/API.js';
 
 // 注册表单验证
 export function regFormValidator(value, type, msg, status) {
