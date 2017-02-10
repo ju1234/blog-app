@@ -42,26 +42,26 @@ npm run build
 
 ## 作品展示
 ### 首页
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/index.PNG"/>
+![首页截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/index.jpg)
 
 ### 登录
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/login.PNG"/>
+![登录截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/login.jpg)
 
 ### 注册
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/reg.PNG"/>
+![注册截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/reg.jpg)
 
 ### 我的文章
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/myArticle.PNG"/>
+![我的文章截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myArticle.jpg)
 
 ### 我的收藏
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/myFavorite.PNG"/>
+![我的收藏截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myFavorite.jpg)
 
 ### 个人资料
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/personal.PNG"/>
+![个人资料截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/personal.jpg)
 
 ### 搜索
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/search.PNG"/>
+![搜索截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/search.jpg)
 
 ### 新建
-<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/write.PNG"/>
+![新建截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/write.jpg)
 
