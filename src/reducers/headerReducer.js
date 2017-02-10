@@ -5,9 +5,9 @@
  * 时间： 2017/1-17
  */
 
-import Immutable from 'immutable'
+import Immutable from 'immutable';
 
-import * as actionType from '../utils/actionTypes'
+import * as actionType from '../utils/actionTypes';
 
 const init = {
   back: false,

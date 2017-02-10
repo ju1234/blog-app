@@ -13,7 +13,7 @@ import * as path from '../../utils/paths.js';
 import {actionGoToLoginPage} from '../../actions/commonAction.js';
 import {actionGoToOther} from '../../actions/footerAction.js';
 //==================================================================
-import personalStyle from './scss/personal.scss'
+import personalStyle from './scss/personal.scss';
 
 
 class Personal extends Component {

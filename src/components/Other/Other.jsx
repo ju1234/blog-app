@@ -16,7 +16,7 @@ import {actionGoToView} from '../../actions/searchAction.js';
 import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
 import {actionGetOtherData} from '../../actions/otherAction.js'
 //===============================================
-import otherStyle from './scss/other.scss'
+import otherStyle from './scss/other.scss';
 
 
 class Other extends Component{

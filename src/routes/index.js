@@ -5,9 +5,9 @@
  * 时间： 2017/1/9.
  */
 
-import React from 'react'
-import {Router, Route, browserHistory, IndexRoute} from 'react-router'
-import {Provider} from 'react-redux'
+import React from 'react';
+import {Router, Route, browserHistory, IndexRoute} from 'react-router';
+import {Provider} from 'react-redux';
 //=======================================================================
 import store from '../store/store';
 //=======================================================================

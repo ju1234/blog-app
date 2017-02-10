@@ -5,7 +5,7 @@
  * 时间： 2017/1/19.
  */
 
-import * as paths from './paths'
+import * as paths from './paths';
 
 //----------刷新获取信息
 export function getPathTitle(path) {

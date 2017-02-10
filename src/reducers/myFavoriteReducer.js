@@ -6,8 +6,8 @@
  */
 
 
-import Immutable from 'immutable'
-import * as actionType from '../utils/actionTypes.js'
+import Immutable from 'immutable';
+import * as actionType from '../utils/actionTypes.js';
 
 
 const init = {

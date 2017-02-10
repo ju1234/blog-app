@@ -5,20 +5,20 @@
  * 时间： 2017/1/18.
  */
 
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 
-import Header from '../components/Header/Header.jsx'
-import Footer from '../components/Footer/Footer.jsx'
-import AlertModel from '../components/AlertModel/AlertModel.jsx'
+import Header from '../components/Header/Header.jsx';
+import Footer from '../components/Footer/Footer.jsx';
+import AlertModel from '../components/AlertModel/AlertModel.jsx';
 
-import Login from '../components/Login/Login'
+import Login from '../components/Login/Login';
 
 
 // const Header = require('../components/Header/Header')
 
-import layoutStyle from './scss/layout.scss'
+import layoutStyle from './scss/layout.scss';
 
 
 class Layout extends Component {

@@ -25,6 +25,7 @@ export function getArticle(reqCount) {
   }
 }
 
+//跳转他人主页
 export function goToOtherPage(articleInfo,router) {
   return (dispatch) => {
     articleInfo.author = articleInfo.author.replace('<span class="cue">','');

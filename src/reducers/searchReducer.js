@@ -5,7 +5,7 @@
  * 时间： 2017/2/5
  */
 import Immutable from 'immutable';
-import * as actionTypes from '../utils/actionTypes.js'
+import * as actionTypes from '../utils/actionTypes.js';
 
 const init = {
   userList: [],

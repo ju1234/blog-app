@@ -4,9 +4,8 @@
  * 创建者： JU
  * 时间： 2017/1-17
  */
-import Immutable from 'immutable'
-
-import * as actionType from '../utils/actionTypes.js'
+import Immutable from 'immutable';
+import * as actionType from '../utils/actionTypes.js';
 
 const init = localStorage.getItem('BLOG_USER_INFO')?
   JSON.parse(localStorage.getItem('BLOG_USER_INFO')):

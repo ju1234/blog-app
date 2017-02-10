@@ -5,11 +5,11 @@
  * 时间： 2017/1/18.
  */
 
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 //======================================
-import {dataValidator} from '../../../utils/profileConfig.js'
+import {dataValidator} from '../../../utils/profileConfig.js';
 //=====================================
-import barStyle from './sass/bar.scss'
+import barStyle from './sass/bar.scss';
 
 
 class Bar extends Component {

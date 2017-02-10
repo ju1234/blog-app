@@ -7,7 +7,7 @@
 
 
 import React,{Component} from 'react';
-import userListStyle from './scss/userList.scss'
+import userListStyle from './scss/userList.scss';
 
 
 

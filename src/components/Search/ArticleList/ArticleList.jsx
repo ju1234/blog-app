@@ -7,7 +7,7 @@
 
 
 import React,{Component} from 'react';
-import searchArticleList from './scss/searchArticleList.scss'
+import searchArticleList from './scss/searchArticleList.scss';
 
 
 

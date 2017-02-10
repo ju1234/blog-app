@@ -1,14 +1,14 @@
 /**
- * 文件说明： 个人主页工具
+ * 文件说明： 个人主页 配置文件
  * 详细描述：
  * 创建者： JU
  * 时间： 2017/1/23
  */
 
 import moment from 'moment';
-import {getByteLen} from './regFormValidator.js'
-import * as api from './api.js'
-import {apiPost} from '../api/API.js'
+import {getByteLen} from './regFormValidator.js';
+import * as api from './api.js';
+import {apiPost} from '../api/API.js';
 // 信息处理
 export function infoProcess(info) {
   let array = [];

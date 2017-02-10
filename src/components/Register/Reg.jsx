@@ -9,7 +9,7 @@ import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 //=======================================
-import {register} from '../../actions/regAction.js'
+import {register} from '../../actions/regAction.js';
 
 //=======================================
 import regStyle from './scss/reg.scss';
@@ -21,7 +21,7 @@ import {regFormValidator, submitValidator} from '../../utils/regFormValidator.js
 class Reg extends Component {
   constructor(props) {
     super(props);
-    this.actions = bindActionCreators(Object.assign({}, {register}), props.dispatch)
+    this.actions = bindActionCreators(Object.assign({}, {register}), props.dispatch);
     this.status = [0, 0, 0, 0];
   }
 

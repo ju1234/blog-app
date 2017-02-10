@@ -11,6 +11,7 @@ import * as actionType from '../utils/actionTypes.js';
 import * as api from '../utils/api.js'
 import * as path from '../utils/paths.js'
 
+// 获取他人主页数据
 export function actionGetOtherData(id) {
   return (dispatch) => {
     apiPost(api.GET_OTHER, {id: id})

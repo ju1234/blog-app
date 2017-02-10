@@ -7,14 +7,14 @@
 
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux'
+import {bindActionCreators} from 'redux';
 //================================================
-import Bar from './ProfileBar/ProfileBar.jsx'
-import {actionAlterUserInfo} from '../../actions/personalAction.js'
-import {actionGoToLoginPage} from '../../actions/commonAction.js'
+import Bar from './ProfileBar/ProfileBar.jsx';
+import {actionAlterUserInfo} from '../../actions/personalAction.js';
+import {actionGoToLoginPage} from '../../actions/commonAction.js';
 //============================================
-import {infoProcess} from '../../utils/profileConfig.js'
-import profileStyle from './scss/profile.scss'
+import {infoProcess} from '../../utils/profileConfig.js';
+import profileStyle from './scss/profile.scss';
 
 class Profile extends Component {
   constructor(props) {

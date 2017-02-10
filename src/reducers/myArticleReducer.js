@@ -6,7 +6,7 @@
  */
 
 import Immutable from 'immutable';
-import * as actionType from '../utils/actionTypes.js'
+import * as actionType from '../utils/actionTypes.js';
 
 function myArticleReducer(state = Immutable.fromJS({}),action) {
   switch (action.type){

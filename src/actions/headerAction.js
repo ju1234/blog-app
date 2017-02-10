@@ -40,6 +40,7 @@ export function actionInit() {
   }
 }
 
+//改变页面title
 export function actionChangeTitle(path) {
   return (dispatch) => {
     dispatch({
