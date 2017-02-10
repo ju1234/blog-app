@@ -14,7 +14,6 @@ export function noEscapeSequence(string) {
 
 //html实体转字符串
 var decodeEntities = (function() {
-  // this prevents any overhead from creating the object each time
   var element = document.createElement('div');
 
   function decodeHTMLEntities (str) {
