@@ -39,3 +39,8 @@ npm run build
 ├── webpack.config.js #  webpack配置
 ├── package.json      # （这个就不用多解释了吧）
 ```
+
+## 作品展示
+### 首页
+![首页截图](https://github.com/ju1234/blog-app/blob/master/static/images/demo/index.PNG)
+
