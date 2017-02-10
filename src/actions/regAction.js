@@ -30,7 +30,7 @@ export function register(data, status, router,path) {
           dispatch({
             type: actionType.SET_USER_INFO,
             payload: {
-              userInfo: data,
+              userInfo: JSON.parse(msg.data),
               logined: true
             }
           });

@@ -59,6 +59,7 @@ class Write extends Component{
       this.refs.content.focus();
       return ;
     }
+    console.log(this.props.userInfo)
     const data = {
       title: title,
       content: content,
