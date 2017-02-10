@@ -54,7 +54,7 @@ npm run build
 ![我的文章截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myArticle.jpg)
 
 ### 我的收藏
-![我的收藏截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myFavorite.jpg)
+![我的收藏截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myFavoite.jpg)
 
 ### 个人资料
 ![个人资料截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/personal.jpg)
