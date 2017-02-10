@@ -11,7 +11,7 @@ import {bindActionCreators} from 'redux';
 
 import Header from '../components/Header/Header.jsx'
 import Footer from '../components/Footer/Footer.jsx'
-import AlertModel from '../common/AlertModel/AlertModel.jsx'
+import AlertModel from '../components/AlertModel/AlertModel.jsx'
 
 import Login from '../components/Login/Login'
 

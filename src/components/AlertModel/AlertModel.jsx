@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 
-import Button from '../Button/Button.jsx'
+import Button from './Button/Button.jsx'
 import alertModelStyle from './scss/alertModel.scss'
 
 import {actionGoToLoginPage,actionLogout,actionGoToRegPage,actionHideAlert} from '../../actions/commonAction.js'

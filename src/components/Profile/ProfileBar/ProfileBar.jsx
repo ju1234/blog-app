@@ -7,7 +7,7 @@
 
 import React, {Component} from 'react'
 //======================================
-import {dataValidator} from '../../utils/profileUtils.js'
+import {dataValidator} from '../../../utils/profileUtils.js'
 //=====================================
 import barStyle from './sass/bar.scss'
 
