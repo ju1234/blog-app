@@ -20,9 +20,11 @@ const init = {
 
 export default function layoutReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
+    // 显示弹出层
     case actionType.SHOW_ALERTMODEL:
       return state.update('showAlert',() => true);
 
+    // 隐藏弹出层
     case actionType.HIDE_ALERTMODEL:
       return state.update('showAlert',() => false);
 

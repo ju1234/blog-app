@@ -16,6 +16,7 @@ const init = {
 
 export default function myFavoriteReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
+      // 设置我的收藏文章数据
     case actionType.MYFAVORITE_ARTICLE:
       return state.update('articleList',() => action.payload);
     default:

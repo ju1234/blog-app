@@ -9,6 +9,7 @@ import moment from 'moment';
 import {getByteLen} from './regFormValidator.js';
 import * as api from './api.js';
 import {apiPost} from '../api/API.js';
+
 // 信息处理
 export function infoProcess(info) {
   let array = [];

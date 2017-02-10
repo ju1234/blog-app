@@ -14,6 +14,7 @@ const init = {
 
 export default function (state = Immutable.fromJS(init),action) {
   switch (action.type){
+    // 设置footer激活状态
     case actionType.SET_FOOTER_ACTIVE:
       return state.update('active',() => action.payload);
 

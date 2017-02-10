@@ -36,7 +36,6 @@ export const HEADER_BTN_SHOW = 'HEADER_BTN_SHOW';
 //修改按钮
 export const CHANGE_TITLE = 'CHANGE_TITLE';
 
-
 // 设置底部active
 export const SET_FOOTER_ACTIVE = 'SET_FOOTER_ACTIVE';
 

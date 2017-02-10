@@ -14,6 +14,7 @@ const init = {
 
 export default function searchReducer(state = Immutable.fromJS(init), action) {
   switch (action.type) {
+      // 再次加载数据并设置
     case actionTypes.SET_SEARCH_DATA_AGIAN:
       return state.update('userList', (oldValue) => {
         return Immutable.fromJS(mergeUniq(oldValue.toJS(), action.payload.userList));
@@ -21,10 +22,11 @@ export default function searchReducer(state = Immutable.fromJS(init), action) {
         return  Immutable.fromJS(mergeUniq(oldValue.toJS(), action.payload.articleList));
       });
 
-
+      // 设置搜索数据
     case actionTypes.SET_SEARCH_DATA:
       return Immutable.fromJS(action.payload);
 
+      // 初始化设置
     case actionTypes.SEARCH_INIT:
       return Immutable.fromJS(init);
 
@@ -33,6 +35,7 @@ export default function searchReducer(state = Immutable.fromJS(init), action) {
   }
 }
 
+// 数组合并去重
 function mergeUniq(old, newData) {
   for (let i = 0; i < newData.length; i++) {
     for (let j = 0; j < old.length; j++) {

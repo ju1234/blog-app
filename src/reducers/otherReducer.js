@@ -15,6 +15,7 @@ const init = {
 
 export default function otherReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
+    // 设置他人主页数据
     case actionType.SET_OTHER:
       return Immutable.fromJS(action.payload);
     default:

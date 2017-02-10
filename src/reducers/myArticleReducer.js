@@ -10,6 +10,7 @@ import * as actionType from '../utils/actionTypes.js';
 
 function myArticleReducer(state = Immutable.fromJS({}),action) {
   switch (action.type){
+    // 设置我的文章数据
     case actionType.SET_MYARTICLE:
       return Immutable.fromJS(action.payload);
     default:

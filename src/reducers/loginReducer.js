@@ -24,13 +24,12 @@ export default function loginReducer(state = Immutable.fromJS(init), action) {
       localStorage.setItem('BLOG_USER_INFO', JSON.stringify(action.payload));
       return Immutable.fromJS(action.payload);
 
+      // 修改用户信息
     case actionType.ALTER_USER_INFO:
       let st = state.toJS();
       st.userInfo[action.payload.key] = action.payload.value;
       localStorage.setItem('BLOG_USER_INFO', JSON.stringify(st));
       return Immutable.fromJS(st);
-
-
 
     //注销   清楚用户信息
     case actionType.CLEAR_USER_INFO:

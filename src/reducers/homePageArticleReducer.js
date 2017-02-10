@@ -15,6 +15,7 @@ const init = {
 
 export default function homePageArticleReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
+    // 设置首页文章数据
     case actionType.SET_HOMEPAGE_ARTICLE:
       return state.update('articleList',(oldValue) => {
         return mergeUniq(oldValue, action.payload);
@@ -25,7 +26,7 @@ export default function homePageArticleReducer(state = Immutable.fromJS(init),ac
 }
 
 
-
+// 数组合并 并 去重
 function mergeUniq(old, newData) {
   for (let i = 0; i < newData.length; i++) {
     for (let j = 0; j < old.length; j++) {

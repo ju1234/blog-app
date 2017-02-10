@@ -16,10 +16,13 @@ const init = {
 
 export default function viewReducer(state = Immutable.fromJS(init),action) {
   switch (action.type){
+      // 设置文章查看页数据
     case actionType.SET_VIEW_ARTICLE:
       return state.update('article',() => {
           return action.payload;
         });
+
+      // 设置我的收藏数据
     case actionType.SET_FAVORITE:
       return state.update('favorited',() => {
         return action.payload

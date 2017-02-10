@@ -31,6 +31,7 @@ export default function headerReducer(state = Immutable.fromJS(init), action) {
     case actionType.SHOW_HEADER_BACKBTN:
       return state.update('back', () => true);
 
+      // 修改title
     case actionType.CHANGE_TITLE:
       return state.update('title',() => {
         return action.payload
