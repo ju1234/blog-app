@@ -42,5 +42,26 @@ npm run build
 
 ## 作品展示
 ### 首页
-![首页截图](https://github.com/ju1234/blog-app/blob/master/static/images/demo/index.PNG)
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/index.PNG"/>
+
+### 登录
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/login.PNG"/>
+
+### 注册
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/reg.PNG"/>
+
+### 我的文章
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/myArticle.PNG"/>
+
+### 我的收藏
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/myFavorite.PNG"/>
+
+### 个人资料
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/personal.PNG"/>
+
+### 搜索
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/search.PNG"/>
+
+### 新建
+<img width="200"  src="https://github.com/ju1234/blog-app/blob/master/static/images/demo/write.PNG"/>
 
