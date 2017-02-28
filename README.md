@@ -7,6 +7,9 @@
 cnpm install
 （经测试，`cnpm` 对于 `node-sass` 等问题多的 Package 拥有秒杀能力）
 
+# cd ./src/utils/localhostConfig.js
+修改为本机地址
+
 # 开启本地服务器localhost:8888
 npm run build
 ```
