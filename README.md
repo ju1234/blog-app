@@ -7,6 +7,9 @@
 cnpm install
 （经测试，`cnpm` 对于 `node-sass` 等问题多的 Package 拥有秒杀能力）
 
+# cd ./src/utils/localhostConfig.js
+修改为本机地址
+
 # 开启本地服务器localhost:8888
 npm run build
 ```
@@ -41,27 +44,27 @@ npm run build
 ```
 
 ## 作品展示
-###  首页
+### * `首页`
 ![首页截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/index.jpg)
 
-###  登录
+### * `登录`
 ![登录截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/login.jpg)
 
-###   注册
+### *  `注册`
 ![注册截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/reg.jpg)
 
-###   我的文章
+### *  `我的文章`
 ![我的文章截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myArticle.jpg)
  
-###   我的收藏
+### *  `我的收藏`
 ![我的收藏截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/myFavoite.jpg)
 
-###  个人资料
+### *  `个人资料`
 ![个人资料截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/personal.jpg)
 
-###   搜索
+### *  `搜索`
 ![搜索截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/search.jpg)
 
-###   新建
+### *  `新建`
 ![新建截图](https://github.com/ju1234/blog-app/blob/test/static/images/demo/write.jpg)
 
