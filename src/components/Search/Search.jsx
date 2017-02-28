@@ -52,7 +52,7 @@ class Search extends Component {
     if (searchContent !== undefined) {
       let height = searchContent.offsetHeight;
       let screenHeight = $(window).height();
-      if (scrollTop + screenHeight + 100 >= height) {
+      if (scrollTop + screenHeight + 100 >= height && this.props.search.hsaMore) {
         this.reqCount++;
         if (this.refs.searchInput.value !== '') {
           this.actions.actionSearch(this.refs.searchInput.value, this.reqCount);
