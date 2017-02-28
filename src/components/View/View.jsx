@@ -16,6 +16,7 @@ import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
 //==================================================
 import viewStyle from './scss/view.scss';
 import {noEscapeSequence} from '../../utils/viewUtils.js'
+import {LOCALHOST} from '../../utils/localhostConfig.js';
 
 class View extends Component {
   constructor(props) {
@@ -98,7 +99,7 @@ class View extends Component {
               </div>
               <div>
                 <i>
-                  <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
+                  <img src={`http://${LOCALHOST}:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
                 </i>
                 <span>{this.props.article.author + ' · '}</span>
                 <span>{moment(this.props.article.time).format('YYYY-MM-DD h:mm:ss')}</span>

@@ -9,7 +9,8 @@ import * as actionTypes from '../utils/actionTypes.js';
 
 const init = {
   userList: [],
-  articleList: []
+  articleList: [],
+  hasMore: true
 };
 
 export default function searchReducer(state = Immutable.fromJS(init), action) {

@@ -35,8 +35,12 @@ class Search extends Component {
 
   componentDidMount() {
     this.actions.actionInitSearch();
-
     addEventListener('scroll', this.searchScrollHandle.bind(this));
+  }
+
+  componentDidUpdate() {
+    console.log(this.props.search)
+
   }
 
   componentWillUnmount() {
@@ -45,7 +49,6 @@ class Search extends Component {
 
 
   searchScrollHandle(e) {
-    // console.log(React)
     const searchContent = this.refs.searchContent;
     let scrollTop = document.body.scrollTop;
 

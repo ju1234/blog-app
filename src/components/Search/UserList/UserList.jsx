@@ -8,7 +8,7 @@
 
 import React,{Component} from 'react';
 import userListStyle from './scss/userList.scss';
-
+import {LOCALHOST} from '../../../utils/localhostConfig.js'
 
 
 export default class UserList extends Component{
@@ -31,7 +31,7 @@ export default class UserList extends Component{
         )}
       >
         <i>
-          <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
+          <img src={`http://${LOCALHOST}:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
         </i>
         <span ref="username"></span>
       </div>

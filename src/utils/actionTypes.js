@@ -68,3 +68,9 @@ export const SEARCH_INIT = 'SEARCH_INIT';
 
 //设置其他用户信息
 export const SET_OTHER = 'SET_OTHER';
+
+//设置首页是否还有更多
+export const SET_GETARTICLE_HASMORE = 'SET_GETARTICLE_HASMORE';
+
+//设置搜索是否还有更多
+export const SET_SEARCH_HASMORE = 'SET_SEARCH_HASMORE';

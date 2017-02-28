@@ -4,11 +4,14 @@
  * 创建者： JU
  * 时间： 2017/1/20
  */
+
+import {LOCALHOST} from '../utils/localhostConfig.js';
+
 export function apiGet(url, dataType = 'json',) {
   return new Promise((resolve, reject) => {
     $.ajax({
       // url:'http://16.1.30.200:3000/api/all',
-      url: `http://16.1.30.200:3000${url}`,
+      url: `http://${LOCALHOST}:3000${url}`,
       type: 'get', //GET
       async: true,
       timeout: 5000,    //超时时间
@@ -29,7 +32,7 @@ export function apiGet(url, dataType = 'json',) {
 export function apiPost(url,data,dataType = 'json') {
   return new Promise((resolve, reject) => {
     $.ajax({
-      url: `http://16.1.30.200:3000${url}`,
+      url: `http://${LOCALHOST}:3000${url}`,
       // url: `http://16.1.30.200:3000${url}`,
       type: 'post', //GET
       async: true,    //或false,是否异

@@ -21,7 +21,7 @@ export function actionSearch(value,reqCount) {
           dispatch({
             type: actionTypes.SET_SEARCH_DATA_AGIAN,
             payload: data
-          })
+          });
         }else {
           dispatch({
             type: actionTypes.SET_SEARCH_DATA,

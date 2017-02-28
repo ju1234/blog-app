@@ -18,7 +18,7 @@ export function footInit() {
       case paths.INDEX:
         dispatch({
           type: actionType.SET_FOOTER_ACTIVE,
-          payload: [1,0,0,0]
+          payload: [1, 0, 0, 0]
         });
         break;
     }
@@ -32,7 +32,7 @@ export function actionGoToIndex(router) {
     // 设置active
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
-      payload: [1,0,0,0]
+      payload: [1, 0, 0, 0]
     });
 
     //显示头部按钮
@@ -54,7 +54,7 @@ export function actionGoToPersonal(router) {
     // 设置active
     dispatch({
       type: actionType.SET_FOOTER_ACTIVE,
-      payload: [0,0,0,1]
+      payload: [0, 0, 0, 1]
     });
 
     //显示头部按钮
@@ -71,7 +71,7 @@ export function actionGoToPersonal(router) {
 
 
 // 跳转其他页面
-export function actionGoToOther(router,url,activeArr) {
+export function actionGoToOther(router, url, activeArr) {
   router.push(url);
   return (dispatch) => {
     // 设置active

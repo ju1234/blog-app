@@ -17,6 +17,7 @@ import {actionChangeTitle} from '../../actions/myFavoriteAction.js';
 import {actionGetOtherData} from '../../actions/otherAction.js'
 //===============================================
 import otherStyle from './scss/other.scss';
+import {LOCALHOST} from '../../utils/localhostConfig.js'
 
 
 class Other extends Component{
@@ -46,7 +47,7 @@ class Other extends Component{
       <div className={otherStyle.otherContainer}>
         <div>
           <i>
-            <img src={`http://16.1.30.200:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
+            <img src={`http://${LOCALHOST}:3000/images/${parseInt(Math.random() * 19) + 1}.jpg`} alt="头像" title="头像"/>
           </i>
           <span>{this.props.userInfo.name || null}</span>
         </div>

@@ -45,7 +45,6 @@ class HomePage extends Component {
   }
 
   componentWillUnmount(){
-    console.log('asd')
     removeEventListener('scroll', this.scrollHandle)
   }
 
@@ -56,7 +55,8 @@ class HomePage extends Component {
     if (homeContainer !== undefined) {
       let height = homeContainer.offsetHeight;
       let screenHeight = $(window).height();
-      if (scrollTop + screenHeight + 100 >= height) {
+      console.log(this.props.hasMore);
+      if (scrollTop + screenHeight + 100 >= height && this.props.hasMore) {
         this.reqCount++;
         this.actions.getArticle(this.reqCount);
       }
@@ -97,7 +97,8 @@ class HomePage extends Component {
 
 function mapStateToProps(store) {
   return {
-    articleList: store.homePage.toJS().articleList
+    articleList: store.homePage.toJS().articleList,
+    hasMore: store.homePage.toJS().hasMore
   }
 }
 

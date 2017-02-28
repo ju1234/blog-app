@@ -10,16 +10,19 @@ import Immutable from 'immutable';
 import * as actionType from '../utils/actionTypes.js';
 
 const init = {
- articleList : []
+  articleList: [],
+  hasMore: true
 };
 
-export default function homePageArticleReducer(state = Immutable.fromJS(init),action) {
-  switch (action.type){
+export default function homePageArticleReducer(state = Immutable.fromJS(init), action) {
+  switch (action.type) {
     // 设置首页文章数据
     case actionType.SET_HOMEPAGE_ARTICLE:
-      return state.update('articleList',(oldValue) => {
+      return state.update('articleList', (oldValue) => {
         return mergeUniq(oldValue, action.payload);
       });
+    case actionType.SET_GETARTICLE_HASMORE:
+      return state.update('hasMore', () => action.payload);
     default:
       return state;
   }

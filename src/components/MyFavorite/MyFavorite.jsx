@@ -37,11 +37,13 @@ class MyFavorite extends Component {
   };
 
   componentDidMount() {
-    if(this.props.userInfo.favorite.length === 0){
-      this.hasFavorite = false;
-    }else {
-      this.hasFavorite = true;
-      this.actions.getMyFavoriteArticle(this.props.userInfo)
+    if(this.props.userInfo.favorite){
+      if(this.props.userInfo.favorite.length === 0){
+        this.hasFavorite = false;
+      }else {
+        this.hasFavorite = true;
+        this.actions.getMyFavoriteArticle(this.props.userInfo)
+      }
     }
 
   }

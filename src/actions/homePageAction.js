@@ -20,6 +20,10 @@ export function getArticle(reqCount) {
         dispatch({
           type: actionType.SET_HOMEPAGE_ARTICLE,
           payload: JSON.parse(res.data)
+        });
+        dispatch({
+          type: actionType.SET_GETARTICLE_HASMORE,
+          payload: res.hasMore
         })
       })
   }
