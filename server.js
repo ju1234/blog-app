@@ -29,32 +29,55 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.get('*', (req, res, next) => {
+// app.get('*', (req, res, next) => {
+//   res.sendFile(path.join(__dirname, "src/index.html"));
+// });
+
+// 路由处理
+app.get('/', (req, res, next) => {
   res.sendFile(path.join(__dirname, "src/index.html"));
 });
 
-// // 路由处理
-// app.get('/', (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "src/index.html"));
-// });
-//
-// app.get('/index', (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "src/index.html"));
-//   // next();
-// });
-//
-//
-// app.get('/login', (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "src/index.html"));
-// });
-//
-// app.get('/reg', (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "src/index.html"));
-// });
-//
-// app.get('/personal', (req, res, next) => {
-//   res.sendFile(path.join(__dirname, "src/index.html"));
-// });
+app.get('/index', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+  // next();
+});
+
+app.get('/login', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
+app.get('/reg', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
+app.get('/view:id', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
+app.get('/myFavorite', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
+app.get('/write', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+app.get('/search', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+app.get('/other/:id', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+
+app.get('/personal', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+app.get('/personal/profile', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
+app.get('/personal/myArticle', (req, res, next) => {
+  res.sendFile(path.join(__dirname, "src/index.html"));
+});
 
 
 // routes(app);
