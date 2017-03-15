@@ -86,7 +86,7 @@ console.log(process.env.NODE_ENV, process.env.NODE_ENV === 'production');
 
 var port = isProduction ? 80 : 8888;
 
-app.listen(port, function () {
-  console.log('Server started: http://localhost:' + port + '/');
+app.listen(80, function () {
+  console.log('Server started: http://localhost:' + 80 + '/');
 });
 

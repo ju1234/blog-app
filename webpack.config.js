@@ -6,7 +6,7 @@
  */
 console.log('process.env.NODE_ENV',process.env.NODE_ENV);
 module.exports = {
-  devtool: process.env.NODE_ENV ? '': 'source-map',
+  devtool: process.env.NODE_ENV ? '': '',
   entry: __dirname + "/src/index.js",
   // entry:  __dirname + "/src/test/index.js",
   output: {

@@ -44,7 +44,7 @@
     "start": "node server.js",
     "webpack": "webpack --watch",
     "webpackP": "webpack -p",
-    "deploy": "set NODE_ENV=production&& concurrently \"npm run start\"  \"npm run webpackP\" ",
+    "deploy": "export NODE_ENV=production&& concurrently \"npm run start\"  \"npm run webpackP\" ",
     "build": "concurrently \"npm run start\"  \"npm run webpack\" "
   },
   "repository": {},
