@@ -9,7 +9,7 @@ import * as paths from './paths';
 
 //----------刷新获取信息
 export function getPathTitle(path) {
-  switch (path){
+  switch (path) {
     case paths.INDEX:
       return '首页';
     case paths.MYFAVORITE:
@@ -36,5 +36,11 @@ export function getPathTitle(path) {
 
 // 路径切割
 export function pathProcessor(href) {
-  return href.split(':8888')[1];
+  console.log(href);
+  if (href.indexOf('jblog') > 0) {
+    return href.split('.club')[1];
+  } else if ((href.indexOf(':8888')) > 0) {
+    return href.split(':8888')[1];
+  }
+
 }

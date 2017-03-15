@@ -6,4 +6,4 @@
  */
 
 
-export const LOCALHOST = '192.168.0.101';
+export const LOCALHOST = '138.68.224.14';

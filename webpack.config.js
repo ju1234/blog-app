@@ -4,8 +4,9 @@
  * 创建者： JU
  * 时间： 2016/12/19.
  */
+console.log('process.env.NODE_ENV',process.env.NODE_ENV);
 module.exports = {
-  devtool: 'source-map',
+  devtool: process.env.NODE_ENV ? '': 'source-map',
   entry: __dirname + "/src/index.js",
   // entry:  __dirname + "/src/test/index.js",
   output: {

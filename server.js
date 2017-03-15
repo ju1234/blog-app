@@ -13,7 +13,8 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.set('port', (process.env.PORT || 8888));
+// app.set('port', (process.env.PORT || 8888));
+
 
 app.use('/', express.static(path.join(__dirname + '/static')));
 
@@ -57,7 +58,12 @@ app.get('*', (req, res, next) => {
 
 
 // routes(app);
+var isProduction = process.env.NODE_ENV === 'production';
+console.log(process.env.NODE_ENV, process.env.NODE_ENV === 'production');
 
-app.listen(app.get('port'), function () {
-  console.log('Server started: http://localhost:' + app.get('port') + '/');
+var port = isProduction ? 80 : 8888;
+
+app.listen(port, function () {
+  console.log('Server started: http://localhost:' + port + '/');
 });
+
